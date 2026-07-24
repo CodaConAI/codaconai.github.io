@@ -1,0 +1,27 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CODACON Blog</title>
+  <subtitle>AI security consulting, incident response, and secure SDLC.</subtitle>
+  <link href="https://codacon.ai/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://codacon.ai/" rel="alternate" type="text/html"/>
+  <id>https://codacon.ai/</id>
+  {% set lastPost = collections.posts | last %}<updated>{% if lastPost %}{{ lastPost.date | dateISO }}{% endif %}</updated>
+  <author>
+    <name>CODACON Inc.</name>
+  </author>
+  {%- for post in collections.posts | reverse %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ post.url | absoluteUrl }}" rel="alternate" type="text/html"/>
+    <id>{{ post.url | absoluteUrl }}</id>
+    <published>{{ post.date | dateISO }}</published>
+    {% if post.data.updated %}<updated>{{ post.data.updated | dateISO }}</updated>{% else %}<updated>{{ post.date | dateISO }}</updated>{% endif %}
+    <summary>{{ post.data.description }}</summary>
+    <content type="html">{{ post.templateContent | e }}</content>
+  </entry>
+  {%- endfor %}
+</feed>
