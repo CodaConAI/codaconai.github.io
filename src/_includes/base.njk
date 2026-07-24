@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ page.url | absoluteUrl }}">
+
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ page.url | absoluteUrl }}">
+  <meta property="og:site_name" content="CODACON">
+  <meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+
+  <link rel="alternate" type="application/atom+xml" title="CODACON Blog" href="https://codacon.ai/feed.xml">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CODACON",
+    "url": "https://codacon.ai"
+  }
+  </script>
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name">CODACON</a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/feed.xml">RSS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <p>&copy; {{ year }} CODACON Inc. All rights reserved.</p>
+    <p>Blog content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Code licensed under <a href="/LICENSE">MIT</a>.</p>
+  </footer>
+</body>
+</html>

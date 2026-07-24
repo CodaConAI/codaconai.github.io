@@ -1,0 +1,60 @@
+---
+layout: base.njk
+---
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title }}",
+  "description": "{{ description }}",
+  "datePublished": "{{ date | dateISO }}",
+  {% if updated %}"dateModified": "{{ updated | dateISO }}",{% endif %}
+  "author": {
+    "@type": "Organization",
+    "name": "CODACON Inc.",
+    "url": "https://codacon.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CODACON Inc.",
+    "url": "https://codacon.ai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absoluteUrl }}"
+  }
+}
+</script>
+{% endblock %}
+
+<article>
+  <header class="post-header">
+    <h1>{{ title }}</h1>
+    <time datetime="{{ date | dateISO }}">{{ date | dateDisplay }}</time>
+    {% if tags %}
+    <ul class="tags">
+      {% for tag in tags %}{% if tag != "post" %}<li>{{ tag }}</li>{% endif %}{% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <hr>
+    <p class="license">This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may share and adapt it with attribution and a link to <a href="{{ page.url | absoluteUrl }}">the original</a>.</p>
+
+    <div class="cta">
+      <h2>Stay current on AI security</h2>
+      <p>Subscribe to the <a href="/feed.xml">RSS feed</a> for new posts on AI-driven security, secure SDLC, and incident response.</p>
+    </div>
+
+    <div class="cta">
+      <h2>Work with us</h2>
+      <p><a href="mailto:hello@codacon.ai">Book a call</a> to discuss your security posture, AI strategy, or hiring needs.</p>
+    </div>
+  </footer>
+</article>

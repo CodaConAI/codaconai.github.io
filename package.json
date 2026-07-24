@@ -1,0 +1,16 @@
+{
+  "name": "codacon-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CODACON Inc. — AI security consulting and product engineering",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
