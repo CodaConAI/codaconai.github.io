@@ -1,0 +1,41 @@
+---
+layout: base.njk
+metaTitle: "Field Notes — AI Security, Cloud Security & DevSecOps Insights — CODACON"
+title: "Field Notes"
+description: "Practical writing on AI security, cloud security, DevSecOps, AI governance, and incident response from CODACON practitioners."
+permalink: /insights/
+narrowLayout: true
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}"},
+    {"@type": "ListItem", "position": 2, "name": "Insights", "item": "{{ site.url }}/insights/"}
+  ]
+}
+</script>
+
+<h1>Field Notes</h1>
+
+<p>Observations from practice — AI security, cloud governance, secure delivery, and what production readiness actually requires.</p>
+
+<ul class="post-list">
+{%- for post in collections.posts %}
+  <li>
+    <div class="post-meta">
+      <time datetime="{{ post.date | dateISO }}">{{ post.date | dateDisplay }}</time>
+      <span>{{ post.templateContent | readingTime }} read</span>
+      {%- for tag in post.data.tags %}{% if tag != "post" %}<span>{{ tag }}</span>{% endif %}{%- endfor %}
+    </div>
+    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    <p>{{ post.data.description }}</p>
+  </li>
+{%- endfor %}
+</ul>
+
+<hr>
+
+<p>Subscribe via <a href="/feed.xml">RSS</a> to get new posts in your reader.</p>

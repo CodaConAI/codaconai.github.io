@@ -1,0 +1,108 @@
+---
+layout: base.njk
+metaTitle: "CODACON — AI Security Consulting & Applied AI Engineering"
+title: "Build capability. Keep control."
+description: "CODACON designs and secures AI systems for organizations where privacy, resilience, and accountability matter. AI security consulting, cloud security, DevSecOps, and AI governance."
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.legalName }}",
+  "url": "{{ site.url }}",
+  "description": "{{ description }}",
+  "foundingDate": "{{ site.foundingDate }}",
+  "founder": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "{{ site.contactEmail }}",
+    "contactType": "sales"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "{{ site.url }}"
+  }]
+}
+</script>
+
+<div class="hero">
+  <p class="hero-eyebrow">AI Security &amp; Applied AI Engineering</p>
+  <h1>Build capability. Keep control.</h1>
+  <p class="hero-body">CODACON designs and secures AI systems for organizations where privacy, resilience, and accountability matter. We turn high-value workflows into operational capability your team can own, trust, and improve.</p>
+  <div class="hero-ctas">
+    <a href="/contact/" class="btn btn--primary">Discuss a critical workflow</a>
+    <a href="/capabilities/" class="btn">See how we work</a>
+  </div>
+</div>
+
+<p class="trust-line">Practitioner-led. AWS and Azure. Built for regulated environments. Based in Canada. English and French.</p>
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Build</h3>
+    <p>AI systems and automation designed for production — not demos. We architect, build, and harden AI-driven workflows so your team ships capability that holds up under real conditions and real scrutiny.</p>
+    <a href="/capabilities/#build" class="card-link">How we build &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Secure</h3>
+    <p>AI and cloud security grounded in architecture, not checklists. Threat modeling, infrastructure hardening, incident response — the work that makes systems trustworthy before an auditor asks.</p>
+    <a href="/capabilities/#secure" class="card-link">How we secure &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Govern</h3>
+    <p>Governance and resilience frameworks that engineers can execute and leadership can defend. Policy as code, risk accountability, and compliance posture that reflects what actually runs.</p>
+    <a href="/capabilities/#govern" class="card-link">How we govern &rarr;</a>
+  </div>
+</div>
+
+<section class="section">
+  <h2>Field Notes</h2>
+  <ul class="post-list">
+    {%- for post in collections.posts | limit(3) %}
+    <li>
+      <div class="post-meta">
+        <time datetime="{{ post.date | dateISO }}">{{ post.date | dateDisplay }}</time>
+        <span>{{ post.templateContent | readingTime }} read</span>
+      </div>
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <p>{{ post.data.description }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+  <p><a href="/insights/">All field notes &rarr;</a></p>
+</section>
+
+{% if products | length %}
+<section class="section">
+  <h2>Products</h2>
+  <p>Open tools and tested configurations we use in client work and release publicly.</p>
+  <div class="card-grid">
+    {%- for product in products | limit(3) %}
+    <div class="product-card">
+      <span class="status-badge{% if product.status == 'Private beta' %} status-badge--beta{% elif product.status == 'Research' %} status-badge--research{% endif %}">{{ product.status }}</span>
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.outcome }}</p>
+      <p class="product-audience">{{ product.audience }}</p>
+      {% if product.url != "TODO" %}<a href="{{ product.url }}" class="card-link">{{ product.cta }} &rarr;</a>{% else %}<span class="card-link" style="opacity:0.4">URL pending</span>{% endif %}
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+{% endif %}
+
+<div class="final-cta">
+  <h2>Bring us one consequential workflow.</h2>
+  <a href="/contact/" class="btn btn--primary">Start a conversation</a>
+</div>

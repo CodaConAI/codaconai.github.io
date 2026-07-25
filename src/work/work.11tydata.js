@@ -1,14 +1,12 @@
 const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
-  layout: "post.njk",
-  tags: "post",
-  crosspost: true,
+  layout: "casestudy.njk",
+  tags: "casestudy",
   eleventyComputed: {
     permalink: (data) => {
       if (isProduction && data.draft) return false;
-      const slug = data.page.fileSlug.replace(/^\d{4}-\d{2}-\d{2}-/, "");
-      return `/blog/${slug}/`;
+      return `/work/${data.page.fileSlug}/`;
     },
     eleventyExcludeFromCollections: (data) => {
       if (isProduction && data.draft) return true;

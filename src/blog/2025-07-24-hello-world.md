@@ -33,4 +33,4 @@ We are direct. If something is working, we will not invent a project to justify 
 
 This blog will cover what we learn as we work: practical techniques for AI-driven security, architecture decisions that make systems harder to break, and honest assessments of which AI security tools actually deliver.
 
-If you are building with AI and thinking about security — or thinking about AI and worried about security — [we should talk](/services/).
+If you are building with AI and thinking about security — or thinking about AI and worried about security — [we should talk](/contact/).

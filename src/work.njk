@@ -1,0 +1,40 @@
+---
+layout: base.njk
+metaTitle: "Work — AI Security & Cloud Security Case Studies — CODACON"
+title: "Work"
+description: "Case studies from CODACON engagements: AI security, cloud security architecture, DevSecOps, identity governance, and policy as code."
+permalink: /work/
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}"},
+    {"@type": "ListItem", "position": 2, "name": "Work", "item": "{{ site.url }}/work/"}
+  ]
+}
+</script>
+
+<h1>Work</h1>
+
+<p>Selected engagements. Each study follows the same structure: what was at stake, what constrained the work, what we did, and what became reusable.</p>
+
+<ul class="post-list">
+{%- for study in collections.caseStudies %}
+  <li>
+    <div class="post-meta">
+      {% if study.data.tags %}
+      {%- for tag in study.data.tags %}{% if tag != "casestudy" %}<span>{{ tag }}</span>{% endif %}{%- endfor %}
+      {% endif %}
+    </div>
+    <h3><a href="{{ study.url }}">{{ study.data.title }}</a></h3>
+    <p>{{ study.data.description }}</p>
+  </li>
+{%- endfor %}
+</ul>
+
+{% if collections.caseStudies.length == 0 %}
+<p style="color: var(--color-text-muted);">Case studies are in preparation.</p>
+{% endif %}

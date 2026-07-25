@@ -1,5 +1,6 @@
 ---
 layout: base.njk
+narrowLayout: true
 ---
 {% block head %}
 <script type="application/ld+json">
@@ -11,14 +12,14 @@ layout: base.njk
   "datePublished": "{{ date | dateISO }}",
   {% if updated %}"dateModified": "{{ updated | dateISO }}",{% endif %}
   "author": {
-    "@type": "Organization",
-    "name": "CODACON Inc.",
-    "url": "https://codacon.ai"
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}/about/"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "CODACON Inc.",
-    "url": "https://codacon.ai"
+    "name": "{{ site.legalName }}",
+    "url": "{{ site.url }}"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -30,8 +31,11 @@ layout: base.njk
 
 <article>
   <header class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ date | dateISO }}">{{ date | dateDisplay }}</time>
+      <span>{{ content | readingTime }} read</span>
+    </div>
     <h1>{{ title }}</h1>
-    <time datetime="{{ date | dateISO }}">{{ date | dateDisplay }}</time>
     {% if tags %}
     <ul class="tags">
       {% for tag in tags %}{% if tag != "post" %}<li>{{ tag }}</li>{% endif %}{% endfor %}
@@ -44,17 +48,16 @@ layout: base.njk
   </div>
 
   <footer class="post-footer">
-    <hr>
-    <p class="license">This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may share and adapt it with attribution and a link to <a href="{{ page.url | absoluteUrl }}">the original</a>.</p>
+    <p class="license">Articles available under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> unless otherwise noted — attribution with a link to <a href="{{ page.url | absoluteUrl }}">the original</a> is required.</p>
 
     <div class="cta">
-      <h2>Stay current on AI security</h2>
-      <p>Subscribe to the <a href="/feed.xml">RSS feed</a> for new posts on AI-driven security, secure SDLC, and incident response.</p>
+      <h2>Stay current</h2>
+      <p>Subscribe to the <a href="/feed.xml">RSS feed</a> for new field notes on AI security, cloud governance, and secure delivery.</p>
     </div>
 
     <div class="cta">
-      <h2>Work with us</h2>
-      <p><a href="mailto:hello@codacon.ai">Book a call</a> to discuss your security posture, AI strategy, or hiring needs.</p>
+      <h2>Bring us a workflow</h2>
+      <p><a href="mailto:{{ site.contactEmail }}">Get in touch</a> to discuss a consequential workflow, security posture, or AI strategy.</p>
     </div>
   </footer>
 </article>

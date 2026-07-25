@@ -1,0 +1,56 @@
+---
+layout: base.njk
+narrowLayout: true
+---
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "description": "{{ description }}",
+  "datePublished": "{{ date | dateISO }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.legalName }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.legalName }}",
+    "url": "{{ site.url }}"
+  }
+}
+</script>
+{% endblock %}
+
+<article>
+  <header class="post-header">
+    <p class="section-label">Case Study</p>
+    <h1>{{ title }}</h1>
+    {% if tags %}
+    <ul class="tags">
+      {% for tag in tags %}{% if tag != "casestudy" %}<li>{{ tag }}</li>{% endif %}{% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  {% if context or stakes or constraints %}
+  <dl class="case-study-meta">
+    {% if context %}<dt>Context</dt><dd>{{ context }}</dd>{% endif %}
+    {% if stakes %}<dt>Stakes</dt><dd>{{ stakes }}</dd>{% endif %}
+    {% if constraints %}<dt>Constraints</dt><dd>{{ constraints }}</dd>{% endif %}
+  </dl>
+  {% endif %}
+
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <div class="cta">
+      <h2>Similar challenge?</h2>
+      <p><a href="mailto:{{ site.contactEmail }}">Bring us your workflow</a> — we scope engagements to your situation, not a package.</p>
+    </div>
+  </footer>
+</article>
