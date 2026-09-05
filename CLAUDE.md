@@ -55,7 +55,7 @@ Every post ends with two CTAs:
 
 ## Rules
 
-- Never add client-side JavaScript without explicit approval.
+- Never add client-side JavaScript without explicit approval. The one approved script is `src/js/signal-field.js` (decorative ambient signal canvas): it must stay dependency-free, make no network requests, store nothing, and degrade to nothing when JS is unavailable.
 - Never add npm dependencies without explicit approval.
 - Single `main.css` — no CSS frameworks, no Tailwind.
 - Dark mode via `prefers-color-scheme` and CSS custom properties only. No toggle, no JS.

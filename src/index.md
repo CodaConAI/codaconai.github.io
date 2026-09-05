@@ -2,6 +2,7 @@
 layout: base.njk
 title: "CODACON — AI Security Consulting & Product Engineering"
 description: "CODACON Inc. delivers AI-driven security consulting, incident response, secure SDLC, and board advisory for organizations building with AI."
+signalField: full
 ---
 
 <script type="application/ld+json">

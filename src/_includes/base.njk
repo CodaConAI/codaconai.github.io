@@ -19,6 +19,7 @@
 
   <link rel="alternate" type="application/atom+xml" title="CODACON Blog" href="https://codacon.ai/feed.xml">
   <link rel="stylesheet" href="/css/main.css">
+  <script type="module" src="/js/signal-field.js"></script>
 
   <script type="application/ld+json">
   {
@@ -31,6 +32,7 @@
   {% block head %}{% endblock %}
 </head>
 <body>
+  <canvas class="signal-field" data-mode="{{ signalField or 'margin' }}" aria-hidden="true" inert></canvas>
   <header>
     <nav>
       <a href="/" class="site-name">CODACON</a>
