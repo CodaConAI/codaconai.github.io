@@ -71,7 +71,8 @@ jobs:
             fi
 
             # Extract tags (simple: grab lines after "tags:" until next field)
-            tags=$(sed -n '/^tags:/,/^[a-z]/{ /^  - /s/^  - //p }' "$post_path" | head -4 | paste -sd, -)
+            # dev.to tags must be alphanumeric, max four: ai-security -> aisecurity
+            tags=$(sed -n '/^tags:/,/^[a-z]/{ /^  - /s/^  - //p }' "$post_path" | head -4 | sed 's/-//g' | paste -sd, -)
 
             # Extract body (everything after second ---)
             body=$(sed -n '/^---$/,/^---$/!p' "$post_path" | tail -n +1)
@@ -141,14 +142,14 @@ jobs:
             canonical_url="https://codacon.ai/blog/${slug}/"
 
             cat > ".syndication/linkedin/${slug}.txt" <<LINKEDIN
-${title}
+          ${title}
 
-${description}
+          ${description}
 
-Read the full post: ${canonical_url}
+          Read the full post: ${canonical_url}
 
-${tags} #codacon
-LINKEDIN
+          ${tags} #codacon
+          LINKEDIN
 
             echo "Generated LinkedIn draft: ${slug}.txt"
           done < /tmp/new_posts.txt
