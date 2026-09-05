@@ -40,7 +40,7 @@ Optional: `updated` (ISO date), `canonical` (URL, for syndicated posts), `crossp
 
 Channel priority: codacon.ai (canonical) -> LinkedIn -> dev.to -> Medium (manual only).
 
-- **dev.to**: Automated via `.github/workflows/syndicate.yml`. Triggers after a successful Pages deploy. Only publishes posts on their first commit (not edits). Uses repo secret `DEVTO_API_KEY`. Syndication state tracked in `.syndication/devto.json`.
+- **dev.to**: Automated via `.github/workflows/syndicate.yml`. Triggers after a successful Pages deploy. Only publishes posts on their first commit (not edits). Uses the `DEVTO_API_KEY` secret from the `syndication` GitHub environment (restricted to `main`); the job must keep `environment: syndication` or the secret is empty. Tag slugs are flattened for dev.to (`ai-security` -> `aisecurity`). Syndication state tracked in `.syndication/devto.json`.
 - **LinkedIn**: Same workflow generates a ready-to-paste draft at `.syndication/linkedin/<slug>.txt`. Manual paste — no API automation (requires approved developer app with `w_member_social` scope).
 - **Medium**: Manual only. Use Medium's "Import Story" feature and paste the canonical URL (`https://codacon.ai/blog/<slug>/`) so SEO credit stays on the origin site. Do not use the Medium API (deprecated).
 - Set `crosspost: false` in front matter to skip syndication for a post.
