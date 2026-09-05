@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "CODACON — AI Security Consulting & Product Engineering"
-description: "CODACON Inc. delivers AI-driven security consulting, incident response, secure SDLC, and board advisory for organizations building with AI."
+description: "CODACON Inc. delivers board advisory, secure SDLC, incident response, and executive coaching for organizations building with AI."
 key: home
 signalField: full
 ---
@@ -14,7 +14,7 @@ signalField: full
   "url": "https://codacon.ai",
   "logo": "https://codacon.ai/img/logo.svg",
   "image": "https://codacon.ai/img/og-en.jpg",
-  "description": "AI security consulting and product engineering firm specializing in incident response, secure SDLC, cloud security, board advisory, and executive coaching.",
+  "description": "AI security consulting and product engineering firm specializing in board advisory, secure SDLC, cloud security, incident response, and executive coaching.",
   "foundingDate": "2024",
   "founder": {
     "@type": "Person",
@@ -33,7 +33,7 @@ signalField: full
 <div class="hero-copy">
 <p class="eyebrow">AI security consulting</p>
 <h1>AI security for leaders who have to answer for it.</h1>
-<p class="lede">Incident response, secure SDLC, and board advisory from a practitioner who has done the work. Based in Quebec, working in English and French.</p>
+<p class="lede">Board advisory, secure SDLC, and incident response from a practitioner who has done the work. Based in Quebec, working in English and French.</p>
 <p class="actions"><a class="button" href="https://calendar.app.google/imfdaTW4Y1iF9FqUA">Book a 30-minute call</a> <a href="/services/">See services</a></p>
 </div>
 <figure class="portrait">
@@ -54,11 +54,11 @@ CODACON operates at the intersection of AI and security. We help organizations d
 
 ### What we do
 
-**Incident response** — AI-assisted detection, triage, and response. We integrate AI tooling into your IR workflow so your team catches threats earlier and resolves them faster. Not a managed SOC — we build the capability inside your organization.
+**Board advisory** — AI risk and security posture for leadership. We translate technical risk into business language and help boards set policy that reflects reality, not vendor slide decks.
 
 **Secure architectures & AI-driven SDLC** — We design and build secure systems for clients who ship software. That means threat modeling, secure-by-default cloud infrastructure on AWS, and an AI-augmented software development lifecycle that catches vulnerabilities before they reach production.
 
-**Board advisory** — AI risk and security posture for leadership. We translate technical risk into business language and help boards set policy that reflects reality, not vendor slide decks.
+**Incident response** — AI-assisted detection, triage, and response. We integrate AI tooling into your IR workflow so your team catches threats earlier and resolves them faster. Not a managed SOC — we build the capability inside your organization.
 
 **Executive coaching** — Private coaching for CTOs, VPs of Engineering and CISOs on leading secure software delivery in the age of AI. [About the program](/services/executive-coaching/).
 

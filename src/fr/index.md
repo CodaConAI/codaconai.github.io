@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "CODACON — Conseil en sécurité de l’IA et ingénierie de produits"
-description: "CODACON inc. : conseil en sécurité de l’IA, réponse aux incidents, SDLC sécurisé, sécurité infonuagique et accompagnement des conseils d’administration."
+description: "CODACON inc. : accompagnement des conseils d’administration, SDLC sécurisé, réponse aux incidents et coaching exécutif en sécurité de l’IA."
 permalink: /fr/
 key: home
 signalField: full
@@ -15,7 +15,7 @@ signalField: full
   "url": "https://codacon.ai/fr/",
   "logo": "https://codacon.ai/img/logo.svg",
   "image": "https://codacon.ai/img/og-fr.jpg",
-  "description": "Firme de conseil en sécurité de l’IA et d’ingénierie de produits : réponse aux incidents, SDLC sécurisé, sécurité infonuagique, accompagnement des conseils d’administration et coaching exécutif.",
+  "description": "Firme de conseil en sécurité de l’IA et d’ingénierie de produits : accompagnement des conseils d’administration, SDLC sécurisé, sécurité infonuagique, réponse aux incidents et coaching exécutif.",
   "foundingDate": "2024",
   "founder": {
     "@type": "Person",
@@ -34,7 +34,7 @@ signalField: full
 <div class="hero-copy">
 <p class="eyebrow">Conseil en sécurité de l’IA</p>
 <h1>La sécurité de l’IA, pour les dirigeants qui doivent en répondre.</h1>
-<p class="lede">Réponse aux incidents, SDLC sécurisé et accompagnement de la direction, par un praticien qui a fait le travail. Établi au Québec, en français et en anglais.</p>
+<p class="lede">Accompagnement de la direction, SDLC sécurisé et réponse aux incidents, par un praticien qui a fait le travail. Établi au Québec, en français et en anglais.</p>
 <p class="actions"><a class="button" href="https://calendar.app.google/imfdaTW4Y1iF9FqUA">Planifier un appel de 30 minutes</a> <a href="/fr/services/">Voir les services</a></p>
 </div>
 <figure class="portrait">
@@ -55,11 +55,11 @@ CODACON travaille à l’intersection de l’IA et de la sécurité. Nous aidons
 
 ### Ce que nous faisons
 
-**Réponse aux incidents** — Détection, triage et réponse assistés par l’IA. Nous intégrons l’outillage IA à votre processus de réponse aux incidents pour que votre équipe repère les menaces plus tôt et les résolve plus vite. Ce n’est pas un SOC géré : nous bâtissons la capacité à l’intérieur de votre organisation.
+**Accompagnement des conseils d’administration** — Risque lié à l’IA et posture de sécurité pour la direction. Nous traduisons le risque technique en langage d’affaires et aidons les conseils à établir des politiques ancrées dans la réalité, pas dans les présentations des fournisseurs.
 
 **Architectures sécurisées et SDLC propulsé par l’IA** — Nous concevons et bâtissons des systèmes sécurisés pour les clients qui livrent du logiciel. Cela veut dire de la modélisation des menaces, une infrastructure infonuagique sécurisée par défaut sur AWS et un cycle de développement augmenté par l’IA qui attrape les vulnérabilités avant la mise en production.
 
-**Accompagnement des conseils d’administration** — Risque lié à l’IA et posture de sécurité pour la direction. Nous traduisons le risque technique en langage d’affaires et aidons les conseils à établir des politiques ancrées dans la réalité, pas dans les présentations des fournisseurs.
+**Réponse aux incidents** — Détection, triage et réponse assistés par l’IA. Nous intégrons l’outillage IA à votre processus de réponse aux incidents pour que votre équipe repère les menaces plus tôt et les résolve plus vite. Ce n’est pas un SOC géré : nous bâtissons la capacité à l’intérieur de votre organisation.
 
 **Coaching exécutif** — Accompagnement privé des CTO, VP ingénierie et RSSI qui doivent diriger la livraison de logiciels sécurisés à l’ère de l’IA. [Découvrir le programme](/fr/services/coaching-executif/).
 

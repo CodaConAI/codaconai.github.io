@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Services — CODACON"
-description: "AI security consulting services: incident response, secure SDLC, cloud security architecture, board advisory, executive coaching, and AI security talent."
+description: "AI security consulting services: board advisory, secure SDLC and cloud architecture, incident response, executive coaching, and AI security talent."
 permalink: /services/
 key: services
 ---
@@ -10,14 +10,14 @@ key: services
 
 We deliver five capabilities. Each engagement is scoped to your situation — we do not sell packages.
 
-### Incident response
+### Board advisory
 
-AI-assisted detection, triage, and response. We build and integrate AI tooling into your incident response workflow so your team identifies threats earlier and resolves them faster. We train your responders, not replace them.
+AI risk and security posture for leadership. We help boards and executive teams understand their actual exposure, set policy grounded in technical reality, and communicate security posture to stakeholders.
 
-- Threat detection pipeline design with AI-augmented alerting
-- Triage automation that reduces mean time to respond
-- Tabletop exercises and IR playbook development
-- Post-incident review and process improvement
+- AI risk assessment and governance framework
+- Security posture briefings for boards of directors
+- Regulatory readiness (SOC 2, ISO 27001, NIST CSF)
+- Vendor and third-party AI risk evaluation
 
 ### Secure architectures & AI-driven SDLC
 
@@ -28,14 +28,14 @@ We design and build secure systems for teams that ship software. Threat modeling
 - Threat modeling and secure design review
 - CI/CD pipeline hardening
 
-### Board advisory
+### Incident response
 
-AI risk and security posture for leadership. We help boards and executive teams understand their actual exposure, set policy grounded in technical reality, and communicate security posture to stakeholders.
+AI-assisted detection, triage, and response. We build and integrate AI tooling into your incident response workflow so your team identifies threats earlier and resolves them faster. We train your responders, not replace them.
 
-- AI risk assessment and governance framework
-- Security posture briefings for boards of directors
-- Regulatory readiness (SOC 2, ISO 27001, NIST CSF)
-- Vendor and third-party AI risk evaluation
+- Threat detection pipeline design with AI-augmented alerting
+- Triage automation that reduces mean time to respond
+- Tabletop exercises and IR playbook development
+- Post-incident review and process improvement
 
 ### Executive coaching
 

@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Blogue — CODACON"
-description: "Textes pratiques sur la sécurité de l’IA, la réponse aux incidents, le SDLC sécurisé et la gouvernance du risque lié à l’IA, par l’équipe CODACON."
+description: "Textes pratiques sur la gouvernance du risque lié à l’IA, le SDLC sécurisé, la réponse aux incidents et la sécurité de l’IA, par l’équipe CODACON."
 permalink: /fr/blogue/
 key: blog
 ---

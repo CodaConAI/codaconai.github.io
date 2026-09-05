@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Services — CODACON"
-description: "Conseil en sécurité de l’IA : réponse aux incidents, SDLC sécurisé, architecture infonuagique, conseils d’administration, coaching exécutif, talents."
+description: "Conseil en sécurité de l’IA : conseils d’administration, SDLC sécurisé et architecture infonuagique, réponse aux incidents, coaching exécutif, talents."
 permalink: /fr/services/
 key: services
 ---
@@ -10,14 +10,14 @@ key: services
 
 Nous offrons cinq capacités. Chaque mandat est cadré selon votre situation : nous ne vendons pas de forfaits.
 
-### Réponse aux incidents
+### Accompagnement des conseils d’administration
 
-Détection, triage et réponse assistés par l’IA. Nous bâtissons et intégrons l’outillage IA à votre processus de réponse aux incidents pour que votre équipe repère les menaces plus tôt et les résolve plus vite. Nous formons vos intervenants, nous ne les remplaçons pas.
+Risque lié à l’IA et posture de sécurité pour la direction. Nous aidons les conseils et les équipes de direction à comprendre leur exposition réelle, à établir des politiques ancrées dans la réalité technique et à communiquer leur posture de sécurité aux parties prenantes.
 
-- Conception de pipelines de détection avec alertes augmentées par l’IA
-- Automatisation du triage pour réduire le délai moyen de réponse
-- Exercices sur table et élaboration de guides d’intervention
-- Revue post-incident et amélioration des processus
+- Évaluation du risque lié à l’IA et cadre de gouvernance
+- Séances d’information sur la posture de sécurité pour les conseils d’administration
+- Préparation réglementaire (SOC 2, ISO 27001, NIST CSF)
+- Évaluation du risque lié à l’IA chez les fournisseurs et les tiers
 
 ### Architectures sécurisées et SDLC propulsé par l’IA
 
@@ -28,14 +28,14 @@ Nous concevons et bâtissons des systèmes sécurisés pour les équipes qui liv
 - Modélisation des menaces et revue de conception sécurisée
 - Durcissement des pipelines CI/CD
 
-### Accompagnement des conseils d’administration
+### Réponse aux incidents
 
-Risque lié à l’IA et posture de sécurité pour la direction. Nous aidons les conseils et les équipes de direction à comprendre leur exposition réelle, à établir des politiques ancrées dans la réalité technique et à communiquer leur posture de sécurité aux parties prenantes.
+Détection, triage et réponse assistés par l’IA. Nous bâtissons et intégrons l’outillage IA à votre processus de réponse aux incidents pour que votre équipe repère les menaces plus tôt et les résolve plus vite. Nous formons vos intervenants, nous ne les remplaçons pas.
 
-- Évaluation du risque lié à l’IA et cadre de gouvernance
-- Séances d’information sur la posture de sécurité pour les conseils d’administration
-- Préparation réglementaire (SOC 2, ISO 27001, NIST CSF)
-- Évaluation du risque lié à l’IA chez les fournisseurs et les tiers
+- Conception de pipelines de détection avec alertes augmentées par l’IA
+- Automatisation du triage pour réduire le délai moyen de réponse
+- Exercices sur table et élaboration de guides d’intervention
+- Revue post-incident et amélioration des processus
 
 ### Coaching exécutif
 
