@@ -34,6 +34,10 @@ CODACON operates at the intersection of AI and security. We help organizations d
 
 **Talent** — Recruiting and vetting top practitioners in AI security. The market is thin and full of noise. We know who is real.
 
+### Adopting generative AI in a regulated environment?
+
+Start with a [GenAI Security Readiness Assessment](/services/genai-security-readiness/) — a four-week, fixed-scope review that identifies and prioritizes security, governance, privacy, identity, and sovereignty risks before AI reaches production.
+
 ### Why work with us
 
 We are practitioners, not a slide deck consultancy. Our team has shipped production security systems, led incident response at scale, and built AI tooling that works. We are direct, we scope tightly, and we deliver.

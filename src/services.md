@@ -9,6 +9,12 @@ permalink: /services/
 
 We deliver four capabilities. Each engagement is scoped to your situation — we do not sell packages.
 
+### Start here: GenAI Security Readiness Assessment
+
+For regulated Canadian organizations adopting generative AI. Four weeks, fixed scope. We identify and prioritize security, governance, privacy, identity, and sovereignty risks before AI reaches production — covering AI architecture, data exposure, agent permissions, prompt injection, RAG and MCP security, provider risk, digital sovereignty, logging, AI incident response, and governance.
+
+[Read the full scope](/services/genai-security-readiness/).
+
 ### Incident response
 
 AI-assisted detection, triage, and response. We build and integrate AI tooling into your incident response workflow so your team identifies threats earlier and resolves them faster. We train your responders, not replace them.
@@ -46,4 +52,4 @@ Recruiting and vetting top practitioners in AI security. The talent market in th
 
 ---
 
-Ready to scope an engagement? [Get in touch](mailto:hello@codacon.ai).
+Ready to scope an engagement? [Get in touch](mailto:hello@codacon.ai), or start with a [GenAI Security Readiness Assessment](/services/genai-security-readiness/).
