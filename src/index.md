@@ -20,11 +20,11 @@ description: "CODACON Inc. delivers AI-driven security consulting, incident resp
 }
 </script>
 
-## AI security, from architecture to the boardroom
+# AI security, from architecture to the boardroom
 
 CODACON operates at the intersection of AI and security. We help organizations detect threats faster, ship secure software, and make informed decisions about AI risk — from the engineering team to the board.
 
-### What we do
+## What we do
 
 **Incident response** — AI-assisted detection, triage, and response. We integrate AI tooling into your IR workflow so your team catches threats earlier and resolves them faster. Not a managed SOC — we build the capability inside your organization.
 
@@ -34,18 +34,18 @@ CODACON operates at the intersection of AI and security. We help organizations d
 
 **Talent** — Recruiting and vetting top practitioners in AI security. The market is thin and full of noise. We know who is real.
 
-### Adopting generative AI in a regulated environment?
+## Adopting generative AI in a regulated environment?
 
 Start with a [GenAI Security Readiness Assessment](/services/genai-security-readiness/) — a four-week, fixed-scope review that identifies and prioritizes security, governance, privacy, identity, and sovereignty risks before AI reaches production.
 
-### Why work with us
+## Why work with us
 
 We are practitioners, not a slide deck consultancy. Our team has shipped production security systems, led incident response at scale, and built AI tooling that works. We are direct, we scope tightly, and we deliver.
 
 [Talk to us](mailto:hello@codacon.ai) about your security posture, AI strategy, or hiring needs.
 
-### From the blog
+## From the blog
 
-{% for post in collections.posts | reverse %}
+{% for post in collections.posts %}
 - [{{ post.data.title }}]({{ post.url }}) — {{ post.data.description }}
 {% endfor %}

@@ -55,6 +55,8 @@ Every post ends with two CTAs:
 
 ## Rules
 
+- Standalone pages (`src/*.md` using `base.njk`) start with a single `#` h1, then `##` subsections. Blog posts start at `##` — `post.njk` renders the h1 from `title`.
+- `collections.posts` is already sorted newest-first in `eleventy.config.js`. Do not add `| reverse`.
 - Never add client-side JavaScript without explicit approval.
 - Never add npm dependencies without explicit approval.
 - Single `main.css` — no CSS frameworks, no Tailwind.

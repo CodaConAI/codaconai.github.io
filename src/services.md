@@ -5,17 +5,17 @@ description: "AI security consulting services: incident response, secure SDLC, c
 permalink: /services/
 ---
 
-## Services
+# Services
 
 We deliver four capabilities. Each engagement is scoped to your situation — we do not sell packages.
 
-### Start here: GenAI Security Readiness Assessment
+## Start here: GenAI Security Readiness Assessment
 
 For regulated Canadian organizations adopting generative AI. Four weeks, fixed scope. We identify and prioritize security, governance, privacy, identity, and sovereignty risks before AI reaches production — covering AI architecture, data exposure, agent permissions, prompt injection, RAG and MCP security, provider risk, digital sovereignty, logging, AI incident response, and governance.
 
 [Read the full scope](/services/genai-security-readiness/).
 
-### Incident response
+## Incident response
 
 AI-assisted detection, triage, and response. We build and integrate AI tooling into your incident response workflow so your team identifies threats earlier and resolves them faster. We train your responders, not replace them.
 
@@ -24,7 +24,7 @@ AI-assisted detection, triage, and response. We build and integrate AI tooling i
 - Tabletop exercises and IR playbook development
 - Post-incident review and process improvement
 
-### Secure architectures & AI-driven SDLC
+## Secure architectures & AI-driven SDLC
 
 We design and build secure systems for teams that ship software. Threat modeling up front, secure-by-default infrastructure on AWS, and an AI-augmented development lifecycle that catches vulnerabilities before production.
 
@@ -33,7 +33,7 @@ We design and build secure systems for teams that ship software. Threat modeling
 - Threat modeling and secure design review
 - CI/CD pipeline hardening
 
-### Board advisory
+## Board advisory
 
 AI risk and security posture for leadership. We help boards and executive teams understand their actual exposure, set policy grounded in technical reality, and communicate security posture to stakeholders.
 
@@ -42,7 +42,7 @@ AI risk and security posture for leadership. We help boards and executive teams 
 - Regulatory readiness (SOC 2, ISO 27001, NIST CSF)
 - Vendor and third-party AI risk evaluation
 
-### Talent
+## Talent
 
 Recruiting and vetting top practitioners in AI security. The talent market in this space is thin and noisy. We know who ships, who leads, and who is learning on your dime.
 
