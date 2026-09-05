@@ -69,7 +69,7 @@ CODACON operates at the intersection of AI and security. We help organizations d
 1. **Call.** Thirty minutes. You describe the situation; we tell you honestly whether we can help.
 2. **Scope.** A written scope with outcomes, timeline and price. No packages, no retainers you did not ask for.
 3. **Work.** We work inside your team, with your tools, and leave capability behind.
-4. **Handover.** Documentation, a briefing for your leadership, and a clear view of what comes next.
+4. **Handover, or continuity.** Documentation, a briefing for your leadership, and a clear view of what comes next. Clients who want a standing line to us move to a monthly advisory retainer.
 
 ### Why work with us
 
@@ -87,6 +87,6 @@ If you are building with AI and thinking about security, or thinking about AI an
 
 ### From the blog
 
-{% for post in collections.posts | reverse %}
+{% for post in collections.posts %}
 - [{{ post.data.title }}]({{ post.url }}) — {{ post.data.description }}
 {% endfor %}

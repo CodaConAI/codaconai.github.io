@@ -6,10 +6,10 @@ permalink: /blog/
 key: blog
 ---
 
-## Blog
+# Blog
 
-{% for post in collections.posts | reverse %}
-### [{{ post.data.title }}]({{ post.url }})
+{% for post in collections.posts %}
+## [{{ post.data.title }}]({{ post.url }})
 
 <time datetime="{{ post.date | dateISO }}">{{ post.date | dateDisplay(lang) }}</time>
 

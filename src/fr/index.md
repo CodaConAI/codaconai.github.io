@@ -70,7 +70,7 @@ CODACON travaille à l’intersection de l’IA et de la sécurité. Nous aidons
 1. **Appel.** Trente minutes. Vous décrivez la situation ; nous vous disons franchement si nous pouvons aider.
 2. **Cadrage.** Une proposition écrite avec les résultats attendus, l’échéancier et le prix. Pas de forfaits, pas de mandats récurrents que vous n’avez pas demandés.
 3. **Travail.** Nous travaillons au sein de votre équipe, avec vos outils, et nous laissons la capacité en place.
-4. **Transfert.** Documentation, séance d’information pour votre direction et vision claire de la suite.
+4. **Transfert, ou continuité.** Documentation, séance d’information pour votre direction et vision claire de la suite. Les clients qui veulent une ligne directe avec nous passent à un mandat-conseil mensuel.
 
 ### Pourquoi travailler avec nous
 
@@ -88,6 +88,6 @@ Si vous bâtissez avec l’IA en pensant à la sécurité, ou si vous pensez à 
 
 ### Sur le blogue
 
-{% for post in collections.postsFr | reverse %}
+{% for post in collections.postsFr %}
 - [{{ post.data.title }}]({{ post.url }}) — {{ post.data.description }}
 {% endfor %}

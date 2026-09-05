@@ -6,11 +6,11 @@ permalink: /services/
 key: services
 ---
 
-## Services
+# Services
 
 We deliver five capabilities. Each engagement is scoped to your situation — we do not sell packages.
 
-### Board advisory
+## Board advisory
 
 AI risk and security posture for leadership. We help boards and executive teams understand their actual exposure, set policy grounded in technical reality, and communicate security posture to stakeholders.
 
@@ -18,8 +18,9 @@ AI risk and security posture for leadership. We help boards and executive teams 
 - Security posture briefings for boards of directors
 - Regulatory readiness (SOC 2, ISO 27001, NIST CSF)
 - Vendor and third-party AI risk evaluation
+- Ongoing advisory retainer: a standing seat between board meetings for the questions that do not wait
 
-### Secure architectures & AI-driven SDLC
+## Secure architectures & AI-driven SDLC
 
 We design and build secure systems for teams that ship software. Threat modeling up front, secure-by-default infrastructure on AWS, and an AI-augmented development lifecycle that catches vulnerabilities before production.
 
@@ -28,7 +29,7 @@ We design and build secure systems for teams that ship software. Threat modeling
 - Threat modeling and secure design review
 - CI/CD pipeline hardening
 
-### Incident response
+## Incident response
 
 AI-assisted detection, triage, and response. We build and integrate AI tooling into your incident response workflow so your team identifies threats earlier and resolves them faster. We train your responders, not replace them.
 
@@ -37,7 +38,7 @@ AI-assisted detection, triage, and response. We build and integrate AI tooling i
 - Tabletop exercises and IR playbook development
 - Post-incident review and process improvement
 
-### Executive coaching
+## Executive coaching
 
 Private coaching for CTOs, VPs of Engineering and CISOs whose teams are adopting AI faster than their security practice can follow. You leave with the judgment, the vocabulary and the operating model to lead it.
 
@@ -47,7 +48,7 @@ Private coaching for CTOs, VPs of Engineering and CISOs whose teams are adopting
 
 [About the program](/services/executive-coaching/)
 
-### Talent
+## Talent
 
 Recruiting and vetting top practitioners in AI security. The talent market in this space is thin and noisy. We know who ships, who leads, and who is learning on your dime.
 

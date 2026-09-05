@@ -6,11 +6,11 @@ permalink: /fr/services/
 key: services
 ---
 
-## Services
+# Services
 
 Nous offrons cinq capacités. Chaque mandat est cadré selon votre situation : nous ne vendons pas de forfaits.
 
-### Accompagnement des conseils d’administration
+## Accompagnement des conseils d’administration
 
 Risque lié à l’IA et posture de sécurité pour la direction. Nous aidons les conseils et les équipes de direction à comprendre leur exposition réelle, à établir des politiques ancrées dans la réalité technique et à communiquer leur posture de sécurité aux parties prenantes.
 
@@ -18,8 +18,9 @@ Risque lié à l’IA et posture de sécurité pour la direction. Nous aidons le
 - Séances d’information sur la posture de sécurité pour les conseils d’administration
 - Préparation réglementaire (SOC 2, ISO 27001, NIST CSF)
 - Évaluation du risque lié à l’IA chez les fournisseurs et les tiers
+- Mandat-conseil continu : un siège permanent entre les réunions du conseil pour les questions qui n’attendent pas
 
-### Architectures sécurisées et SDLC propulsé par l’IA
+## Architectures sécurisées et SDLC propulsé par l’IA
 
 Nous concevons et bâtissons des systèmes sécurisés pour les équipes qui livrent du logiciel. Modélisation des menaces en amont, infrastructure sécurisée par défaut sur AWS et cycle de développement augmenté par l’IA qui attrape les vulnérabilités avant la mise en production.
 
@@ -28,7 +29,7 @@ Nous concevons et bâtissons des systèmes sécurisés pour les équipes qui liv
 - Modélisation des menaces et revue de conception sécurisée
 - Durcissement des pipelines CI/CD
 
-### Réponse aux incidents
+## Réponse aux incidents
 
 Détection, triage et réponse assistés par l’IA. Nous bâtissons et intégrons l’outillage IA à votre processus de réponse aux incidents pour que votre équipe repère les menaces plus tôt et les résolve plus vite. Nous formons vos intervenants, nous ne les remplaçons pas.
 
@@ -37,7 +38,7 @@ Détection, triage et réponse assistés par l’IA. Nous bâtissons et intégro
 - Exercices sur table et élaboration de guides d’intervention
 - Revue post-incident et amélioration des processus
 
-### Coaching exécutif
+## Coaching exécutif
 
 Accompagnement privé des CTO, VP ingénierie et RSSI dont les équipes adoptent l’IA plus vite que leur pratique de sécurité ne peut suivre. Vous en ressortez avec le jugement, le vocabulaire et le modèle d’exploitation nécessaires pour diriger cette transition.
 
@@ -47,7 +48,7 @@ Accompagnement privé des CTO, VP ingénierie et RSSI dont les équipes adoptent
 
 [Découvrir le programme](/fr/services/coaching-executif/)
 
-### Talents
+## Talents
 
 Recrutement et évaluation des meilleurs praticiens en sécurité de l’IA. Le marché de ces compétences est mince et bruyant. Nous savons qui livre, qui dirige et qui apprend à vos frais.
 
