@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 ---
+{%- set t = i18n[lang] -%}
 {% block head %}
 <script type="application/ld+json">
 {
@@ -8,6 +9,7 @@ layout: base.njk
   "@type": "BlogPosting",
   "headline": "{{ title }}",
   "description": "{{ description }}",
+  "inLanguage": "{{ t.htmlLang }}",
   "datePublished": "{{ date | dateISO }}",
   {% if updated %}"dateModified": "{{ updated | dateISO }}",{% endif %}
   "author": {
@@ -31,10 +33,10 @@ layout: base.njk
 <article>
   <header class="post-header">
     <h1>{{ title }}</h1>
-    <time datetime="{{ date | dateISO }}">{{ date | dateDisplay }}</time>
+    <time datetime="{{ date | dateISO }}">{{ date | dateDisplay(lang) }}</time>
     {% if tags %}
     <ul class="tags">
-      {% for tag in tags %}{% if tag != "post" %}<li>{{ tag }}</li>{% endif %}{% endfor %}
+      {% for tag in tags %}{% if tag != "post" and tag != "post-fr" %}<li>{{ t.tags[tag] or tag }}</li>{% endif %}{% endfor %}
     </ul>
     {% endif %}
   </header>
@@ -45,16 +47,16 @@ layout: base.njk
 
   <footer class="post-footer">
     <hr>
-    <p class="license">This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may share and adapt it with attribution and a link to <a href="{{ page.url | absoluteUrl }}">the original</a>.</p>
+    <p class="license">{{ t.post.license | safe }} <a href="{{ page.url | absoluteUrl }}">{{ t.post.original }}</a>.</p>
 
     <div class="cta">
-      <h2>Stay current on AI security</h2>
-      <p>Subscribe to the <a href="/feed.xml">RSS feed</a> for new posts on AI-driven security, secure SDLC, and incident response.</p>
+      <h2>{{ t.post.cta1Title }}</h2>
+      <p>{{ t.post.cta1Body | safe }}</p>
     </div>
 
     <div class="cta">
-      <h2>Work with us</h2>
-      <p><a href="mailto:hello@codacon.ai">Book a call</a> to discuss your security posture, AI strategy, or hiring needs.</p>
+      <h2>{{ t.post.cta2Title }}</h2>
+      <p>{{ t.post.cta2Body | safe }}</p>
     </div>
   </footer>
 </article>

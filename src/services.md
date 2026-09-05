@@ -1,13 +1,14 @@
 ---
 layout: base.njk
 title: "Services — CODACON"
-description: "AI security consulting services: incident response, secure SDLC, cloud security architecture, board advisory, and AI security talent."
+description: "AI security consulting services: incident response, secure SDLC, cloud security architecture, board advisory, executive coaching, and AI security talent."
 permalink: /services/
+key: services
 ---
 
 ## Services
 
-We deliver four capabilities. Each engagement is scoped to your situation — we do not sell packages.
+We deliver five capabilities. Each engagement is scoped to your situation — we do not sell packages.
 
 ### Incident response
 
@@ -35,6 +36,16 @@ AI risk and security posture for leadership. We help boards and executive teams 
 - Security posture briefings for boards of directors
 - Regulatory readiness (SOC 2, ISO 27001, NIST CSF)
 - Vendor and third-party AI risk evaluation
+
+### Executive coaching
+
+Private coaching for CTOs, VPs of Engineering and CISOs whose teams are adopting AI faster than their security practice can follow. You leave with the judgment, the vocabulary and the operating model to lead it.
+
+- Private sessions, virtual or in person in Montreal, or on site at your location
+- Your own SDLC as the case study, not a generic curriculum
+- Board-ready positions on AI coding tools, model risk and vendor claims
+
+[About the program](/services/executive-coaching/)
 
 ### Talent
 

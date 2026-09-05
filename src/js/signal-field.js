@@ -156,7 +156,7 @@ function trunkSAt(route, y) {
 // ---------------------------------------------------------------------------
 
 const BLOCK_SELECTOR =
-  "p, h1, h2, h3, h4, li, pre, blockquote, time, hr, table, figure, img, .tags, .cta";
+  "p, h1, h2, h3, h4, li, pre, blockquote, time, hr, table, figure, img, .tags, .cta, .hero, .proof, .lang-hint";
 
 function measure(canvas) {
   const main = document.querySelector("main");
@@ -188,7 +188,8 @@ function measure(canvas) {
 
   // Occupied vertical intervals: every text-bearing block in main and footer.
   const blocks = [];
-  const scope = [main, footer].filter(Boolean);
+  const hint = document.querySelector(".lang-hint");
+  const scope = [main, footer, hint].filter(Boolean);
   for (const root of scope) {
     for (const el of root.querySelectorAll(BLOCK_SELECTOR)) {
       const r = el.getBoundingClientRect();
@@ -777,6 +778,7 @@ function init() {
     scheduleRebuild();
   };
   mqDark.addEventListener("change", onPrefChange);
+  document.addEventListener("themechange", onPrefChange);
   mqReducedMotion.addEventListener("change", onPrefChange);
   mqReducedData.addEventListener("change", onPrefChange);
   mqCoarse.addEventListener("change", onPrefChange);

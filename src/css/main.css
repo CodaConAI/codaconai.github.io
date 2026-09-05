@@ -13,6 +13,8 @@
   --color-code-bg: #f3f5f8;
   --color-header-bg: #fafbfc;
   --color-accent: #3e7c6a;
+  --color-button-bg: #1b4c7e;
+  --color-button-text: #ffffff;
   --max-width: 42rem;
 
   /* Ambient signal fabric (decorative canvas). Low alpha keeps text contrast intact. */
@@ -27,7 +29,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --color-bg: #0c121c;
     --color-text: #dfe5ee;
     --color-text-muted: #9aa6b8;
@@ -37,6 +39,8 @@
     --color-code-bg: #141c29;
     --color-header-bg: #0a0f17;
     --color-accent: #6fb3a0;
+    --color-button-bg: #7fb5e8;
+    --color-button-text: #0c121c;
 
     --signal-path-a: rgba(122, 170, 220, 0.2);
     --signal-path-b: rgba(111, 179, 160, 0.2);
@@ -47,6 +51,30 @@
     --signal-marker: rgba(111, 179, 160, 0.95);
     --signal-marker-idle: rgba(111, 179, 160, 0.42);
   }
+}
+
+/* Explicit user choice from the theme control wins over the OS preference. */
+:root[data-theme="dark"] {
+    --color-bg: #0c121c;
+    --color-text: #dfe5ee;
+    --color-text-muted: #9aa6b8;
+    --color-link: #7fb5e8;
+    --color-link-visited: #b8a4e6;
+    --color-border: #263244;
+    --color-code-bg: #141c29;
+    --color-header-bg: #0a0f17;
+    --color-accent: #6fb3a0;
+    --color-button-bg: #7fb5e8;
+    --color-button-text: #0c121c;
+
+    --signal-path-a: rgba(122, 170, 220, 0.2);
+    --signal-path-b: rgba(111, 179, 160, 0.2);
+    --signal-path-c: rgba(96, 184, 208, 0.18);
+    --signal-node: rgba(122, 170, 220, 0.36);
+    --signal-packet: rgba(126, 212, 232, 0.9);
+    --signal-packet-glow: rgba(126, 212, 232, 0.2);
+    --signal-marker: rgba(111, 179, 160, 0.95);
+    --signal-marker-idle: rgba(111, 179, 160, 0.42);
 }
 
 *,
@@ -106,12 +134,11 @@ header nav {
   gap: 0.5em;
 }
 
-.site-name::before {
-  content: "";
-  width: 0.45em;
-  height: 0.45em;
-  border: 1px solid var(--color-accent);
-  transform: rotate(45deg);
+.site-name svg {
+  width: 1.6em;
+  height: 1.6em;
+  color: var(--color-accent);
+  flex: none;
 }
 
 header nav ul {
@@ -122,10 +149,252 @@ header nav ul {
   gap: 1rem;
 }
 
+.nav-tools {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  header nav {
+    gap: 0.75rem 1.25rem;
+  }
+
+  .nav-tools {
+    order: 2;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+  }
+}
+
+.lang-switch,
+.theme-toggle {
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: var(--color-text);
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 0.3em 0.6em;
+  text-decoration: none;
+}
+
+.lang-switch {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.lang-switch:visited {
+  color: var(--color-text);
+}
+
+.lang-switch:hover,
+.theme-toggle:hover {
+  border-color: var(--color-accent);
+  text-decoration: none;
+}
+
+.theme-toggle {
+  cursor: pointer;
+}
+
+.theme-toggle span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.theme-toggle span[hidden] {
+  display: none;
+}
+
+.theme-toggle svg {
+  width: 0.95em;
+  height: 0.95em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 2;
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-accent);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.lang-hint {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-code-bg);
+  font-size: 0.9rem;
+}
+
+.lang-hint p {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+}
+
+.lang-hint button {
+  position: absolute;
+  right: max(1rem, calc(50% - var(--max-width) / 2 + 1rem));
+  top: 50%;
+  transform: translateY(-50%);
+  font: inherit;
+  font-size: 1.2rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+
 main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem 1rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0.25rem 0 0.75rem;
+  text-wrap: balance;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.lede {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.button,
+.button:visited {
+  display: inline-block;
+  background: var(--color-button-bg);
+  color: var(--color-button-text);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.55em 1.1em;
+  border-radius: 3px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.portrait {
+  margin: 0;
+  text-align: center;
+}
+
+.portrait img {
+  display: block;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 0 0 3px var(--color-bg), 0 0 0 4px var(--color-accent);
+}
+
+.portrait figcaption {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 0.6rem;
+}
+
+.proof {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.proof li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0;
+}
+
+.proof li::before {
+  content: "";
+  width: 0.4em;
+  height: 0.4em;
+  border: 1px solid var(--color-accent);
+  transform: rotate(45deg);
+  flex: none;
+}
+
+.signature {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .portrait {
+    order: -1;
+    text-align: left;
+  }
+
+  .portrait img {
+    width: 120px;
+    height: 120px;
+    margin: 0;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
 }
 
 /* Content sits above the decorative canvas. */

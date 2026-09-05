@@ -53,10 +53,26 @@ Every post ends with two CTAs:
 1. RSS feed subscription link (for RSS-to-email)
 2. "Book a call" mailto link
 
+## Bilingual site (EN / FR)
+
+- English pages live at the root; French pages live under `src/fr/` and publish under `/fr/`. `src/fr/fr.11tydata.js` sets `lang: fr`.
+- Every page pair shares a `key` in front matter (`home`, `services`, `coaching`, `blog`, `post:<english-slug>`). The `byKey` collection uses it to emit `hreflang` links and to point the header language switch at the right page. Blog posts under `src/blog/` get their key automatically; French posts under `src/fr/blogue/` set `key: post:<english-slug>` by hand.
+- UI strings (nav, footer, post CTAs, tag labels) are in `src/_data/i18n.js`. Page copy stays in the page files.
+- French posts use the same tag slugs as English posts; `i18n.fr.tags` supplies display labels.
+- French posts are not syndicated (the dev.to workflow only watches `src/blog/`). The Atom feed is English only.
+- Never redirect on browser language. `theme.js` may show one dismissible line offering the other language; the visible EN / FR switch is the only navigation between languages.
+- French typography: use the curly apostrophe (’) and a non-breaking space before `:` `;` `?` `!`.
+
+## Images
+
+- `src/_includes/logo.svg` is the mark, copied to `/img/logo.svg` and `/favicon.svg` at build. It uses `currentColor`; inline it with `{% include "logo.svg" %}` where it must follow the theme.
+- `src/img/david-cote-{320,640}.webp` is the founder portrait. `src/img/og-{en,fr}.jpg` are the social cards (1200×630). Regenerate cards when the hero headline changes.
+- No stock photography or decorative illustration.
+
 ## Rules
 
-- Never add client-side JavaScript without explicit approval. The one approved script is `src/js/signal-field.js` (decorative ambient signal canvas): it must stay dependency-free, make no network requests, store nothing, and degrade to nothing when JS is unavailable.
+- Never add client-side JavaScript without explicit approval. Two scripts are approved: `src/js/signal-field.js` (decorative ambient signal canvas) and `src/js/theme.js` (theme override and language courtesy hint). Both must stay dependency-free, make no network requests, and degrade gracefully when JS is unavailable. The only stored values are the chosen theme and the hint dismissal flag. Never add identifiers, analytics, or fingerprinting.
 - Never add npm dependencies without explicit approval.
 - Single `main.css` — no CSS frameworks, no Tailwind.
-- Dark mode via `prefers-color-scheme` and CSS custom properties only. No toggle, no JS.
+- Dark mode via `prefers-color-scheme` and CSS custom properties, with an optional user override (`data-theme` on `<html>`, set by `theme.js`). Tokens live in `:root`; dark tokens are duplicated in the guarded media query block and in `:root[data-theme="dark"]`. Keep the two dark blocks identical.
 - All URLs in feeds and sitemaps must be absolute (`https://codacon.ai/...`).
