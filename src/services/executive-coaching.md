@@ -31,4 +31,4 @@ Private sessions, typically six over twelve weeks, by video or in person in Mont
 
 Pricing on request. We discuss it on the first call, before any commitment.
 
-[Apply for the program](mailto:hello@codacon.ai?subject=Executive%20coaching)
+[Book the first call](https://calendar.app.google/imfdaTW4Y1iF9FqUA) or [email us](mailto:hello@codacon.ai?subject=Executive%20coaching).

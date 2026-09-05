@@ -19,7 +19,7 @@ module.exports = {
       cta1Title: "Stay current on AI security",
       cta1Body: 'Subscribe to the <a href="/feed.xml">RSS feed</a> for new posts on AI-driven security, secure SDLC, and incident response.',
       cta2Title: "Work with us",
-      cta2Body: '<a href="mailto:hello@codacon.ai">Book a call</a> to discuss your security posture, AI strategy, or hiring needs.',
+      cta2Body: '<a href="https://calendar.app.google/imfdaTW4Y1iF9FqUA">Book a call</a> to discuss your security posture, AI strategy, or hiring needs, or <a href="mailto:hello@codacon.ai">email us</a>.',
     },
     tags: {},
   },
@@ -41,7 +41,7 @@ module.exports = {
       cta1Title: "Restez à jour en sécurité de l’IA",
       cta1Body: 'Abonnez-vous au <a href="/feed.xml">fil RSS</a> pour nos prochains billets sur la sécurité propulsée par l’IA, le SDLC sécurisé et la réponse aux incidents.',
       cta2Title: "Travaillons ensemble",
-      cta2Body: '<a href="mailto:hello@codacon.ai">Planifiez un appel</a> pour discuter de votre posture de sécurité, de votre stratégie IA ou de vos besoins en recrutement.',
+      cta2Body: '<a href="https://calendar.app.google/imfdaTW4Y1iF9FqUA">Planifiez un appel</a> pour discuter de votre posture de sécurité, de votre stratégie IA ou de vos besoins en recrutement, ou <a href="mailto:hello@codacon.ai">écrivez-nous</a>.',
     },
     tags: {
       "ai-security": "sécurité de l’IA",

@@ -57,4 +57,4 @@ Recrutement et évaluation des meilleurs praticiens en sécurité de l’IA. Le 
 
 ---
 
-Prêt à cadrer un mandat ? [Écrivez-nous](mailto:hello@codacon.ai).
+Prêt à cadrer un mandat ? [Planifiez un appel de 30 minutes](https://calendar.app.google/imfdaTW4Y1iF9FqUA) ou [écrivez-nous](mailto:hello@codacon.ai).

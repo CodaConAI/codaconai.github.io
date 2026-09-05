@@ -51,7 +51,7 @@ All blog content under `src/blog/` is licensed CC BY 4.0. Reuse requires attribu
 
 Every post ends with two CTAs:
 1. RSS feed subscription link (for RSS-to-email)
-2. "Book a call" mailto link
+2. "Book a call" link to the Google Calendar booking page (`https://calendar.app.google/imfdaTW4Y1iF9FqUA`), with an email fallback
 
 ## Bilingual site (EN / FR)
 

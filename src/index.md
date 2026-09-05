@@ -34,7 +34,7 @@ signalField: full
 <p class="eyebrow">AI security consulting</p>
 <h1>AI security for leaders who have to answer for it.</h1>
 <p class="lede">Incident response, secure SDLC, and board advisory from a practitioner who has done the work. Based in Quebec, working in English and French.</p>
-<p class="actions"><a class="button" href="mailto:hello@codacon.ai?subject=30-minute%20call">Book a 30-minute call</a> <a href="/services/">See services</a></p>
+<p class="actions"><a class="button" href="https://calendar.app.google/imfdaTW4Y1iF9FqUA">Book a 30-minute call</a> <a href="/services/">See services</a></p>
 </div>
 <figure class="portrait">
 <img src="/img/david-cote-320.webp" srcset="/img/david-cote-320.webp 320w, /img/david-cote-640.webp 640w" sizes="(min-width: 640px) 168px, 120px" width="640" height="640" alt="David Côté, founder of CODACON" decoding="async" fetchpriority="high">

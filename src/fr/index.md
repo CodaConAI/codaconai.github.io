@@ -35,7 +35,7 @@ signalField: full
 <p class="eyebrow">Conseil en sécurité de l’IA</p>
 <h1>La sécurité de l’IA, pour les dirigeants qui doivent en répondre.</h1>
 <p class="lede">Réponse aux incidents, SDLC sécurisé et accompagnement de la direction, par un praticien qui a fait le travail. Établi au Québec, en français et en anglais.</p>
-<p class="actions"><a class="button" href="mailto:hello@codacon.ai?subject=Appel%20de%2030%20minutes">Planifier un appel de 30 minutes</a> <a href="/fr/services/">Voir les services</a></p>
+<p class="actions"><a class="button" href="https://calendar.app.google/imfdaTW4Y1iF9FqUA">Planifier un appel de 30 minutes</a> <a href="/fr/services/">Voir les services</a></p>
 </div>
 <figure class="portrait">
 <img src="/img/david-cote-320.webp" srcset="/img/david-cote-320.webp 320w, /img/david-cote-640.webp 640w" sizes="(min-width: 640px) 168px, 120px" width="640" height="640" alt="David Côté, fondateur de CODACON" decoding="async" fetchpriority="high">

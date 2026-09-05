@@ -31,4 +31,4 @@ Séances privées, généralement six sur douze semaines, par vidéo ou en perso
 
 Tarif sur demande. Nous en discutons lors du premier appel, avant tout engagement.
 
-[Poser sa candidature](mailto:hello@codacon.ai?subject=Coaching%20ex%C3%A9cutif)
+[Planifier le premier appel](https://calendar.app.google/imfdaTW4Y1iF9FqUA) ou [écrivez-nous](mailto:hello@codacon.ai?subject=Coaching%20ex%C3%A9cutif).

@@ -57,4 +57,4 @@ Recruiting and vetting top practitioners in AI security. The talent market in th
 
 ---
 
-Ready to scope an engagement? [Get in touch](mailto:hello@codacon.ai).
+Ready to scope an engagement? [Book a 30-minute call](https://calendar.app.google/imfdaTW4Y1iF9FqUA) or [get in touch by email](mailto:hello@codacon.ai).
