@@ -50,6 +50,14 @@ jobs:
             done
           else
             git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'src/blog/*.md' > /tmp/new_posts.txt 2>/dev/null || true
+            # A change to this workflow re-syncs every post already on dev.to so
+            # the rendering stays consistent. Updates only; never a new article.
+            if git diff --name-only HEAD~1 HEAD -- .github/workflows/syndicate.yml | grep -q .; then
+              for slug in $(jq -r 'keys[]' .syndication/devto.json 2>/dev/null); do
+                ls src/blog/????-??-??-"$slug".md 2>/dev/null >> /tmp/new_posts.txt
+              done
+              sort -u /tmp/new_posts.txt -o /tmp/new_posts.txt
+            fi
           fi
 
           if [ ! -s /tmp/new_posts.txt ]; then
@@ -99,6 +107,12 @@ jobs:
 
             # Extract body (everything after second ---)
             body=$(sed -n '/^---$/,/^---$/!p' "$post_path" | tail -n +1)
+
+            # Root-relative links and images would resolve against dev.to;
+            # point them at codacon.ai. Reference-style definitions too.
+            body=$(printf '%s\n' "$body" | sed -E \
+              -e 's#\]\(/([^/)])#](https://codacon.ai/\1#g' \
+              -e 's#^(\[[^]]+\]): /([^/])#\1: https://codacon.ai/\2#')
 
             canonical_url="https://codacon.ai/blog/${slug}/"
 
