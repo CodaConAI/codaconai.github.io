@@ -2,6 +2,7 @@
 title: "What Should a Board Ask Before Approving an AI Coding Tool Rollout?"
 description: "Seven questions directors should ask before approving an AI coding tool rollout: evidence of value, bounded access, accountability, and stop conditions."
 date: 2026-09-06
+updated: 2026-09-06
 tags:
   - board-advisory
   - ai-security
