@@ -28,6 +28,11 @@ Optional: `updated` (ISO date), `canonical` (URL, for syndicated posts), `crossp
 
 3. Use tags from the existing set: `ai-security`, `company`, `incident-response`, `sdlc`, `cloud-security`, `board-advisory`. Add new tags sparingly.
 
+## Page conventions
+
+- Standalone pages (`src/**/*.md` using `base.njk`) start with a single `#` h1, then `##` sections. Blog posts start at `##`; `post.njk` renders the h1 from `title`.
+- `collections.posts` and `collections.postsFr` are already sorted newest-first in `eleventy.config.js`. Do not add `| reverse`.
+
 ## Per-post SEO checklist
 
 - [ ] `description` is unique, <=155 characters, contains a target keyword
@@ -56,7 +61,7 @@ Every post ends with two CTAs:
 ## Bilingual site (EN / FR)
 
 - English pages live at the root; French pages live under `src/fr/` and publish under `/fr/`. `src/fr/fr.11tydata.js` sets `lang: fr`.
-- Every page pair shares a `key` in front matter (`home`, `services`, `coaching`, `blog`, `post:<english-slug>`). The `byKey` collection uses it to emit `hreflang` links and to point the header language switch at the right page. Blog posts under `src/blog/` get their key automatically; French posts under `src/fr/blogue/` set `key: post:<english-slug>` by hand.
+- Every page pair shares a `key` in front matter (`home`, `services`, `coaching`, `genai-readiness`, `blog`, `post:<english-slug>`). The `byKey` collection uses it to emit `hreflang` links and to point the header language switch at the right page. Blog posts under `src/blog/` get their key automatically; French posts under `src/fr/blogue/` set `key: post:<english-slug>` by hand.
 - UI strings (nav, footer, post CTAs, tag labels) are in `src/_data/i18n.js`. Page copy stays in the page files.
 - French posts use the same tag slugs as English posts; `i18n.fr.tags` supplies display labels.
 - French posts are not syndicated (the dev.to workflow only watches `src/blog/`). The Atom feed is English only.

@@ -680,12 +680,14 @@ function init() {
         ctx.globalAlpha = 1;
       }
       if (m.pulse > 0 && !staticMode) {
-        // One calm expanding ring on activation.
+        // One calm expanding ring on activation. On narrow screens the marker
+        // sits a few pixels from the column edge, so cap the ring to the gutter.
         const p = 1 - m.pulse;
+        const room = m.narrow ? Math.max(0, geo.colLeft - m.x - r - 1) : 10;
         ctx.globalAlpha = m.pulse * 0.45;
         ctx.strokeStyle = palette.marker;
         ctx.beginPath();
-        ctx.arc(m.x, m.y, r + p * 10, 0, Math.PI * 2);
+        ctx.arc(m.x, m.y, r + p * Math.min(10, room), 0, Math.PI * 2);
         ctx.stroke();
         ctx.globalAlpha = 1;
       }

@@ -65,6 +65,8 @@ CODACON travaille à l’intersection de l’IA et de la sécurité. Nous aidons
 
 **Talents** — Recrutement et évaluation des meilleurs praticiens en sécurité de l’IA. Le marché est mince et bruyant. Nous savons qui est réellement compétent.
 
+Vous ne savez pas par où commencer ? Commencez par une [évaluation de préparation à la sécurité de l’IA générative](/fr/services/evaluation-securite-ia-generative/) de quatre semaines.
+
 ### Comment se déroule un mandat
 
 1. **Appel.** Trente minutes. Vous décrivez la situation ; nous vous disons franchement si nous pouvons aider.
