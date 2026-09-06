@@ -64,6 +64,8 @@ CODACON operates at the intersection of AI and security. We help organizations d
 
 **Talent** — Recruiting and vetting top practitioners in AI security. The market is thin and full of noise. We know who is real.
 
+Not sure where to start? Begin with a four-week [GenAI Security Readiness Assessment](/services/genai-security-readiness/).
+
 ### How an engagement runs
 
 1. **Call.** Thirty minutes. You describe the situation; we tell you honestly whether we can help.

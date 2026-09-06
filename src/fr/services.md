@@ -10,6 +10,8 @@ key: services
 
 Nous offrons cinq capacités. Chaque mandat est cadré selon votre situation : nous ne vendons pas de forfaits.
 
+Vous ne savez pas par où commencer ? L’[évaluation de préparation à la sécurité de l’IA générative](/fr/services/evaluation-securite-ia-generative/) est une revue de quatre semaines, à portée fixe, qui repère et priorise les risques de sécurité, de vie privée, d’identité et de souveraineté avant que l’IA n’atteigne la production.
+
 ## Accompagnement des conseils d’administration
 
 Risque lié à l’IA et posture de sécurité pour la direction. Nous aidons les conseils et les équipes de direction à comprendre leur exposition réelle, à établir des politiques ancrées dans la réalité technique et à communiquer leur posture de sécurité aux parties prenantes.
@@ -19,6 +21,7 @@ Risque lié à l’IA et posture de sécurité pour la direction. Nous aidons le
 - Préparation réglementaire (SOC 2, ISO 27001, NIST CSF)
 - Évaluation du risque lié à l’IA chez les fournisseurs et les tiers
 - Mandat-conseil continu : un siège permanent entre les réunions du conseil pour les questions qui n’attendent pas
+- [Évaluation de préparation à la sécurité de l’IA générative](/fr/services/evaluation-securite-ia-generative/) : le point d’entrée à portée fixe pour les organisations réglementées
 
 ## Architectures sécurisées et SDLC propulsé par l’IA
 

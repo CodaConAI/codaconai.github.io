@@ -10,6 +10,8 @@ key: services
 
 We deliver five capabilities. Each engagement is scoped to your situation — we do not sell packages.
 
+Not sure where to start? The [GenAI Security Readiness Assessment](/services/genai-security-readiness/) is a four-week, fixed-scope review that finds and prioritizes security, privacy, identity, and sovereignty risks before AI reaches production.
+
 ## Board advisory
 
 AI risk and security posture for leadership. We help boards and executive teams understand their actual exposure, set policy grounded in technical reality, and communicate security posture to stakeholders.
@@ -19,6 +21,7 @@ AI risk and security posture for leadership. We help boards and executive teams 
 - Regulatory readiness (SOC 2, ISO 27001, NIST CSF)
 - Vendor and third-party AI risk evaluation
 - Ongoing advisory retainer: a standing seat between board meetings for the questions that do not wait
+- [GenAI Security Readiness Assessment](/services/genai-security-readiness/): the fixed-scope entry point for regulated organizations
 
 ## Secure architectures & AI-driven SDLC
 
