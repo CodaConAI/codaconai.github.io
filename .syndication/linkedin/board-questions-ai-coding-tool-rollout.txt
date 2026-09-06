@@ -1,0 +1,7 @@
+What Should a Board Ask Before Approving an AI Coding Tool Rollout?
+
+Seven questions directors should ask before approving an AI coding tool rollout: evidence of value, bounded access, accountability, and stop conditions.
+
+Read the full post: https://codacon.ai/blog/board-questions-ai-coding-tool-rollout/
+
+#boardadvisory #aisecurity #sdlc #codacon
