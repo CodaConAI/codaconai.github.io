@@ -1,55 +1,96 @@
+{%- set t = i18n[lang] -%}
+{%- set other = "fr" if lang == "en" else "en" -%}
+{%- set alternates = collections.byKey[key] if key else false -%}
+{%- set altUrl = alternates[other] if alternates and alternates[other] else ("/fr/" if other == "fr" else "/") -%}
+{%- set homeUrl = "/" if lang == "en" else "/fr/" -%}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ t.htmlLang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
   <link rel="canonical" href="{{ page.url | absoluteUrl }}">
+  {%- if alternates and alternates.en and alternates.fr %}
+  <link rel="alternate" hreflang="en" href="{{ alternates.en | absoluteUrl }}">
+  <link rel="alternate" hreflang="fr" href="{{ alternates.fr | absoluteUrl }}">
+  <link rel="alternate" hreflang="x-default" href="{{ alternates.en | absoluteUrl }}">
+  {%- endif %}
 
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:url" content="{{ page.url | absoluteUrl }}">
   <meta property="og:site_name" content="CODACON">
   <meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">
+  <meta property="og:locale" content="{{ t.locale }}">
+  <meta property="og:locale:alternate" content="{{ i18n[other].locale }}">
+  <meta property="og:image" content="https://codacon.ai/img/og-{{ lang }}.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CODACON">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="https://codacon.ai/img/og-{{ lang }}.jpg">
 
   <link rel="alternate" type="application/atom+xml" title="CODACON Blog" href="https://codacon.ai/feed.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#fafbfc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0f17" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/theme.js"></script>
+  <script type="module" src="/js/signal-field.js"></script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "CODACON",
-    "url": "https://codacon.ai"
+    "url": "https://codacon.ai",
+    "inLanguage": "{{ t.htmlLang }}"
   }
   </script>
   {% block head %}{% endblock %}
 </head>
 <body>
+  <a class="skip-link" href="#main">{{ t.skip }}</a>
+  <canvas class="signal-field" data-mode="{{ signalField or 'margin' }}" aria-hidden="true" inert></canvas>
   <header>
     <nav>
-      <a href="/" class="site-name">CODACON</a>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/feed.xml">RSS</a></li>
+      <a href="{{ homeUrl }}" class="site-name">{% include "logo.svg" %}<span>CODACON</span></a>
+      <ul class="nav-links">
+        <li><a href="{{ homeUrl }}">{{ t.nav.home }}</a></li>
+        <li><a href="{{ '/services/' if lang == 'en' else '/fr/services/' }}">{{ t.nav.services }}</a></li>
+        <li><a href="{{ '/blog/' if lang == 'en' else '/fr/blogue/' }}">{{ t.nav.blog }}</a></li>
+        <li><a href="/feed.xml">{{ t.nav.rss }}</a></li>
       </ul>
+      <div class="nav-tools">
+        <a class="lang-switch" href="{{ altUrl }}" lang="{{ other }}" hreflang="{{ other }}" aria-label="{{ t.langSwitch.aria }}">{{ t.langSwitch.label }}</a>
+        <button type="button" class="theme-toggle" data-theme-toggle hidden aria-label="{{ t.theme.aria }}" title="{{ t.theme.label }}">
+          <span data-theme-label="system"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 2a6 6 0 0 1 0 12z" fill="currentColor"/></svg>{{ t.theme.system }}</span>
+          <span data-theme-label="light" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="currentColor"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>{{ t.theme.light }}</span>
+          <span data-theme-label="dark" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 10A6 6 0 0 1 6 2.5a6 6 0 1 0 7.5 7.5z" fill="currentColor"/></svg>{{ t.theme.dark }}</span>
+        </button>
+      </div>
     </nav>
   </header>
 
-  <main>
+  <div class="lang-hint" data-lang-hint="{{ other }}" lang="{{ other }}" hidden>
+    <p>{{ t.langSwitch.hint }} <a href="{{ altUrl }}">{{ t.langSwitch.hintLink }}</a></p>
+    <button type="button" aria-label="{{ t.langSwitch.dismiss }}">&times;</button>
+  </div>
+
+  <main id="main">
     {{ content | safe }}
   </main>
 
   <footer>
-    <p>&copy; {{ year }} CODACON Inc. All rights reserved.</p>
-    <p>Blog content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Code licensed under <a href="/LICENSE">MIT</a>.</p>
+    <p>&copy; {{ year }} {{ t.footer.rights }}</p>
+    <p>{{ t.footer.license | safe }}</p>
+    <p>{{ t.footer.trademark }}</p>
   </footer>
 </body>
 </html>

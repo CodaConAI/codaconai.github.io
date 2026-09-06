@@ -9,11 +9,11 @@ eleventyExcludeFromCollections: true
   <link href="https://codacon.ai/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://codacon.ai/" rel="alternate" type="text/html"/>
   <id>https://codacon.ai/</id>
-  {% set lastPost = collections.posts | last %}<updated>{% if lastPost %}{{ lastPost.date | dateISO }}{% endif %}</updated>
+  {% set lastPost = collections.posts | first %}<updated>{% if lastPost %}{{ lastPost.date | dateISO }}{% endif %}</updated>
   <author>
     <name>CODACON Inc.</name>
   </author>
-  {%- for post in collections.posts | reverse %}
+  {%- for post in collections.posts %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ post.url | absoluteUrl }}" rel="alternate" type="text/html"/>

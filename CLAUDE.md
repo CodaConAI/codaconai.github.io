@@ -40,7 +40,7 @@ Optional: `updated` (ISO date), `canonical` (URL, for syndicated posts), `crossp
 
 Channel priority: codacon.ai (canonical) -> LinkedIn -> dev.to -> Medium (manual only).
 
-- **dev.to**: Automated via `.github/workflows/syndicate.yml`. Triggers after a successful Pages deploy. Only publishes posts on their first commit (not edits). Uses repo secret `DEVTO_API_KEY`. Syndication state tracked in `.syndication/devto.json`.
+- **dev.to**: Automated via `.github/workflows/syndicate.yml`. Triggers after a successful Pages deploy. Only publishes posts on their first commit (not edits). Uses the `DEVTO_API_KEY` secret from the `syndication` GitHub environment (restricted to `main`); the job must keep `environment: syndication` or the secret is empty. Tag slugs are flattened for dev.to (`ai-security` -> `aisecurity`). Syndication state tracked in `.syndication/devto.json`.
 - **LinkedIn**: Same workflow generates a ready-to-paste draft at `.syndication/linkedin/<slug>.txt`. Manual paste — no API automation (requires approved developer app with `w_member_social` scope).
 - **Medium**: Manual only. Use Medium's "Import Story" feature and paste the canonical URL (`https://codacon.ai/blog/<slug>/`) so SEO credit stays on the origin site. Do not use the Medium API (deprecated).
 - Set `crosspost: false` in front matter to skip syndication for a post.
@@ -51,12 +51,28 @@ All blog content under `src/blog/` is licensed CC BY 4.0. Reuse requires attribu
 
 Every post ends with two CTAs:
 1. RSS feed subscription link (for RSS-to-email)
-2. "Book a call" mailto link
+2. "Book a call" link to the Google Calendar booking page (`https://calendar.app.google/imfdaTW4Y1iF9FqUA`), with an email fallback
+
+## Bilingual site (EN / FR)
+
+- English pages live at the root; French pages live under `src/fr/` and publish under `/fr/`. `src/fr/fr.11tydata.js` sets `lang: fr`.
+- Every page pair shares a `key` in front matter (`home`, `services`, `coaching`, `blog`, `post:<english-slug>`). The `byKey` collection uses it to emit `hreflang` links and to point the header language switch at the right page. Blog posts under `src/blog/` get their key automatically; French posts under `src/fr/blogue/` set `key: post:<english-slug>` by hand.
+- UI strings (nav, footer, post CTAs, tag labels) are in `src/_data/i18n.js`. Page copy stays in the page files.
+- French posts use the same tag slugs as English posts; `i18n.fr.tags` supplies display labels.
+- French posts are not syndicated (the dev.to workflow only watches `src/blog/`). The Atom feed is English only.
+- Never redirect on browser language. `theme.js` may show one dismissible line offering the other language; the visible EN / FR switch is the only navigation between languages.
+- French typography: use the curly apostrophe (’) and a non-breaking space before `:` `;` `?` `!`.
+
+## Images
+
+- `src/_includes/logo.svg` is the mark, copied to `/img/logo.svg` and `/favicon.svg` at build. It uses `currentColor`; inline it with `{% include "logo.svg" %}` where it must follow the theme.
+- `src/img/david-cote-{320,640}.webp` is the founder portrait. `src/img/og-{en,fr}.jpg` are the social cards (1200×630). Regenerate cards when the hero headline changes.
+- No stock photography or decorative illustration.
 
 ## Rules
 
-- Never add client-side JavaScript without explicit approval.
+- Never add client-side JavaScript without explicit approval. Two scripts are approved: `src/js/signal-field.js` (decorative ambient signal canvas) and `src/js/theme.js` (theme override and language courtesy hint). Both must stay dependency-free, make no network requests, and degrade gracefully when JS is unavailable. The only stored values are the chosen theme and the hint dismissal flag. Never add identifiers, analytics, or fingerprinting.
 - Never add npm dependencies without explicit approval.
 - Single `main.css` — no CSS frameworks, no Tailwind.
-- Dark mode via `prefers-color-scheme` and CSS custom properties only. No toggle, no JS.
+- Dark mode via `prefers-color-scheme` and CSS custom properties, with an optional user override (`data-theme` on `<html>`, set by `theme.js`). Tokens live in `:root`; dark tokens are duplicated in the guarded media query block and in `:root[data-theme="dark"]`. Keep the two dark blocks identical.
 - All URLs in feeds and sitemaps must be absolute (`https://codacon.ai/...`).
