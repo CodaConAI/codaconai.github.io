@@ -2,6 +2,7 @@
 title: "Que devrait demander un conseil d’administration avant d’approuver le déploiement d’un outil de codage par IA ?"
 description: "Sept questions que les administrateurs devraient poser avant d’approuver un outil de codage par IA : valeur démontrée, accès borné, imputabilité, arrêt."
 date: 2026-09-06
+updated: 2026-09-06
 key: post:board-questions-ai-coding-tool-rollout
 tags:
   - board-advisory
