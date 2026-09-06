@@ -9,7 +9,7 @@ tags:
   - sdlc
 ---
 
-Les démonstrations des fournisseurs montrent à quelle vitesse l’IA peut écrire du code. Le dossier présenté au conseil devrait montrer ce qui arrive quand ce code est erroné.
+Les démonstrations des fournisseurs montrent à quelle vitesse l’IA peut écrire du code. La proposition soumise au conseil devrait montrer ce qui arrive quand ce code est erroné.
 
 Avant d’approuver le déploiement d’un outil de codage par IA, les administrateurs ont besoin de plus qu’une promesse de productivité. Il leur faut des preuves de valeur, des limites claires sur les accès, et une personne imputable pour arrêter le déploiement si ces limites cèdent.
 

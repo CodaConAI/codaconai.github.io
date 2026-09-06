@@ -9,7 +9,7 @@ tags:
 crosspost: true
 ---
 
-Vendor demos show how quickly AI can write code. The board paper should show what happens when that code is wrong.
+Vendor demos show how fast AI can write code. The proposal in front of the board should show what happens when that code is wrong.
 
 Before approving an AI coding tool rollout, directors need more than a productivity promise. They need evidence of value, clear limits on access, and someone accountable for stopping the rollout if those limits fail.
 
