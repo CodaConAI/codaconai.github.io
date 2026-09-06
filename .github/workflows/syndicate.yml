@@ -6,6 +6,11 @@ on:
     types:
       - completed
   workflow_dispatch:
+    inputs:
+      posts:
+        description: "Comma-separated post slugs to sync, or 'all'. Empty: sync posts changed in the last commit."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -23,19 +28,37 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Detect new blog posts
+      # Added posts are created on dev.to; modified posts update the article
+      # recorded for their slug in .syndication/devto.json. A manual run can
+      # name slugs (or "all") to sync posts the commit diff would not catch.
+      - name: Detect changed blog posts
         id: detect
+        env:
+          REQUESTED: ${{ github.event.inputs.posts }}
         run: |
-          NEW_POSTS=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'src/blog/*.md' 2>/dev/null || echo "")
-          if [ -z "$NEW_POSTS" ]; then
-            echo "No new blog posts found."
+          : > /tmp/new_posts.txt
+          if [ "$REQUESTED" = "all" ]; then
+            ls src/blog/*.md > /tmp/new_posts.txt
+          elif [ -n "$REQUESTED" ]; then
+            for slug in $(echo "$REQUESTED" | tr ',' ' '); do
+              match=$(ls src/blog/????-??-??-"$slug".md 2>/dev/null | head -1)
+              if [ -n "$match" ]; then
+                echo "$match" >> /tmp/new_posts.txt
+              else
+                echo "::warning::No post found for slug '$slug'"
+              fi
+            done
+          else
+            git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'src/blog/*.md' > /tmp/new_posts.txt 2>/dev/null || true
+          fi
+
+          if [ ! -s /tmp/new_posts.txt ]; then
+            echo "No new or changed blog posts found."
             echo "has_new=false" >> "$GITHUB_OUTPUT"
           else
-            echo "New posts found:"
-            echo "$NEW_POSTS"
+            echo "Posts to sync:"
+            cat /tmp/new_posts.txt
             echo "has_new=true" >> "$GITHUB_OUTPUT"
-            # Write newline-separated paths to a file for the next step
-            echo "$NEW_POSTS" > /tmp/new_posts.txt
           fi
 
       - name: Load syndication state
@@ -57,12 +80,8 @@ jobs:
             filename=$(basename "$post_path" .md)
             slug=$(echo "$filename" | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-//')
 
-            # Skip if already syndicated
+            # An existing id means update in place; otherwise create.
             existing_id=$(jq -r --arg s "$slug" '.[$s] // empty' .syndication/devto.json)
-            if [ -n "$existing_id" ]; then
-              echo "Already syndicated: $slug (dev.to id: $existing_id)"
-              continue
-            fi
 
             # Extract front matter fields
             title=$(sed -n 's/^title: *"\(.*\)"/\1/p' "$post_path" | head -1)
@@ -101,9 +120,18 @@ jobs:
                 }
               }')
 
-            echo "Publishing to dev.to: $title"
+            if [ -n "$existing_id" ]; then
+              echo "Updating on dev.to: $title (id $existing_id)"
+              method=PUT
+              endpoint="https://dev.to/api/articles/${existing_id}"
+            else
+              echo "Publishing to dev.to: $title"
+              method=POST
+              endpoint="https://dev.to/api/articles"
+            fi
+
             response=$(curl -s -w "\n%{http_code}" \
-              -X POST "https://dev.to/api/articles" \
+              -X "$method" "$endpoint" \
               -H "Content-Type: application/json" \
               -H "api-key: ${DEVTO_API_KEY}" \
               -d "$payload")
@@ -113,12 +141,15 @@ jobs:
 
             if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
               article_id=$(echo "$response_body" | jq -r '.id')
-              echo "Published: $slug -> dev.to id $article_id"
-              # Update syndication state
-              jq --arg s "$slug" --arg id "$article_id" '. + {($s): $id}' .syndication/devto.json > /tmp/devto.json
-              mv /tmp/devto.json .syndication/devto.json
+              if [ -n "$existing_id" ]; then
+                echo "Updated: $slug -> dev.to id $article_id"
+              else
+                echo "Published: $slug -> dev.to id $article_id"
+                jq --arg s "$slug" --arg id "$article_id" '. + {($s): $id}' .syndication/devto.json > /tmp/devto.json
+                mv /tmp/devto.json .syndication/devto.json
+              fi
             else
-              echo "Failed to publish $slug (HTTP $http_code): $response_body"
+              echo "::error::Failed to sync $slug (HTTP $http_code): $response_body"
             fi
           done < /tmp/new_posts.txt
 
