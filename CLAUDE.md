@@ -9,6 +9,8 @@ Static site for codacon.ai built with Eleventy v3. Deployed to GitHub Pages.
 
 ## Adding a blog post
 
+Every English post ships with a French version in the same commit. Create `src/fr/blogue/YYYY-MM-DD-titre-en-kebab.md` with `key: post:<english-slug>` so the header EN / FR switch and `hreflang` pair the two pages. Same `date`, same tag slugs, French `title` and `description`, French typography (see below). Never publish one language without the other.
+
 1. Create `src/blog/YYYY-MM-DD-kebab-title.md`. The date prefix sets the publish date; the slug after the date becomes the URL: `/blog/kebab-title/`.
 2. Front matter schema:
 
