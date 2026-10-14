@@ -76,6 +76,14 @@ Every post ends with two CTAs:
 - `src/img/david-cote-{320,640}.webp` is the founder portrait. `src/img/og-{en,fr}.jpg` are the social cards (1200×630). Regenerate cards when the hero headline changes.
 - No stock photography or decorative illustration.
 
+## Diagrams
+
+- Write diagrams in Mermaid under `diagrams/<name>.<en|fr>.mmd`. Never ship Mermaid as a code block: it needs client-side JS on the site and dev.to does not render it.
+- Run `diagrams/render.sh` and commit the output in `src/img/diagrams/`: an SVG for every diagram, plus a PNG for English ones. The renderer runs through `npx` and needs a Chromium (`PUPPETEER_EXECUTABLE_PATH`); it is not a `package.json` dependency.
+- Embed as a linked image so readers can open it full size: `[![Alt text describing the diagram](/img/diagrams/<name>.en.svg)](/img/diagrams/<name>.en.svg)`. The alt text carries the diagram's meaning in prose.
+- The syndication workflow swaps `/img/diagrams/*.svg` for the `.png` and makes the URL absolute for dev.to.
+- Keep diagrams narrow enough for the 42rem column; long horizontal chains become unreadable on mobile.
+
 ## Rules
 
 - Never add client-side JavaScript without explicit approval. Two scripts are approved: `src/js/signal-field.js` (decorative ambient signal canvas) and `src/js/theme.js` (theme override and language courtesy hint). Both must stay dependency-free, make no network requests, and degrade gracefully when JS is unavailable. The only stored values are the chosen theme and the hint dismissal flag. Never add identifiers, analytics, or fingerprinting.

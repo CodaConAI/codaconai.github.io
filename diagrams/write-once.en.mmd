@@ -1,0 +1,18 @@
+flowchart LR
+  subgraph COMP["Described once"]
+    IDP["Identity provider"]
+    LOG["Central logging"]
+    KMS["Encryption service"]
+  end
+  subgraph SYS["Used by each system"]
+    S1["SSP: customer portal"]
+    S2["SSP: data platform"]
+  end
+  subgraph FW["Mapped to each framework"]
+    F1["NIST SP 800-53"]
+    F2["ISO 27001"]
+    F3["SOC 2"]
+  end
+  COMP --> SYS
+  SYS --> FW
+  IDP ~~~ S1 ~~~ F1

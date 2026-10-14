@@ -36,6 +36,8 @@ NIST [describes OSCAL](https://csrc.nist.gov/projects/open-security-controls-ass
 - **Implementation layer.** *Component definitions* describe how a product or service satisfies controls. A *system security plan* (SSP) describes how a specific system implements its baseline.
 - **Assessment layer.** *Assessment plans*, *assessment results*, and *plans of action and milestones* (POA&M) record what was tested, what was found, and what is being fixed.
 
+[![OSCAL layers: a profile imports a catalog; component definitions reference a profile; a system security plan imports a profile and reuses component definitions; the assessment plan and POA&M import the SSP; assessment results import the assessment plan.](/img/diagrams/oscal-layers.en.svg)](/img/diagrams/oscal-layers.en.svg)
+
 Each layer references the one above it. An SSP points to a profile, which points to a catalog. An assessment result points to the SSP. That chain of references is the point: change a control, and you can trace every system and finding it touches.
 
 ## Why organizations should use it
@@ -43,6 +45,8 @@ Each layer references the one above it. An SSP points to a profile, which points
 ### Write once, map many times
 
 Describe how your platform enforces encryption at rest as a component definition. Reference it from every system that uses the platform. When a framework or a customer asks, the answer comes from the same source, not a fresh rewrite.
+
+[![Shared components such as identity, logging, and encryption are described once, used by each system security plan, and mapped to each framework: NIST SP 800-53, ISO 27001, and SOC 2.](/img/diagrams/write-once.en.svg)](/img/diagrams/write-once.en.svg)
 
 ### Documentation that can be checked
 
@@ -55,6 +59,8 @@ If your cloud and SaaS providers publish component definitions, you inherit thei
 ### Continuous assurance instead of annual theatre
 
 Once controls, systems, and findings are linked as data, evidence from your pipelines and cloud configuration can feed assessment results directly. Status becomes a query, not a project. This is where OSCAL meets the rest of a modern [secure software development lifecycle](/blog/board-questions-ai-coding-tool-rollout/): compliance becomes another artifact the pipeline produces and checks.
+
+[![Continuous assurance loop: a change is validated by the pipeline, automated checks collect evidence, assessment results update, the POA&M tracks open findings, and the fix ships as the next change.](/img/diagrams/continuous-assurance.en.svg)](/img/diagrams/continuous-assurance.en.svg)
 
 ### Regulatory direction of travel
 

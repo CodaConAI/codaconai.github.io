@@ -526,6 +526,20 @@ footer {
   border-radius: 3px;
 }
 
+/* Diagrams are pre-rendered from diagrams/*.mmd with a light palette, so they
+   sit on their own light card in both themes. */
+.post-body img[src^="/img/diagrams/"] {
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  padding: 0.75rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
 .post-footer {
   margin-top: 3rem;
 }

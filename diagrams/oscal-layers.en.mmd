@@ -1,0 +1,21 @@
+flowchart BT
+  subgraph CTRL["Control layer"]
+    CAT["Catalog<br/>control definitions"]
+    PRO["Profile<br/>selected and tailored baseline"]
+  end
+  subgraph IMPL["Implementation layer"]
+    CDEF["Component definition<br/>how a product meets controls"]
+    SSP["System security plan<br/>how one system meets its baseline"]
+  end
+  subgraph ASMT["Assessment layer"]
+    AP["Assessment plan"]
+    AR["Assessment results"]
+    POAM["POA&M<br/>plan of action and milestones"]
+  end
+  PRO -- imports --> CAT
+  CDEF -- references --> PRO
+  SSP -- imports --> PRO
+  SSP -. reuses .-> CDEF
+  AP -- imports --> SSP
+  AR -- imports --> AP
+  POAM -- imports --> SSP

@@ -1,0 +1,21 @@
+flowchart BT
+  subgraph CTRL["Couche des contrôles"]
+    CAT["Catalogue<br/>définitions des contrôles"]
+    PRO["Profil<br/>base de référence adaptée"]
+  end
+  subgraph IMPL["Couche de mise en œuvre"]
+    CDEF["Définition de composant<br/>comment un produit satisfait les contrôles"]
+    SSP["Plan de sécurité du système<br/>comment un système satisfait sa base"]
+  end
+  subgraph ASMT["Couche d’évaluation"]
+    AP["Plan d’évaluation"]
+    AR["Résultats d’évaluation"]
+    POAM["POA&M<br/>plan d’action et jalons"]
+  end
+  PRO -- importe --> CAT
+  CDEF -- référence --> PRO
+  SSP -- importe --> PRO
+  SSP -. réutilise .-> CDEF
+  AP -- importe --> SSP
+  AR -- importe --> AP
+  POAM -- importe --> SSP

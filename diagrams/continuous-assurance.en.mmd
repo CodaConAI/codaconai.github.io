@@ -1,0 +1,7 @@
+flowchart TB
+  CH["Change to a system<br/>or its OSCAL model"] --> VAL["Pipeline validates<br/>schema and references"]
+  VAL --> EV["Automated control checks<br/>collect evidence"]
+  EV --> AR["Assessment results<br/>updated as data"]
+  AR --> PO["POA&M tracks<br/>open findings"]
+  PO --> FIX["Fix ships"]
+  FIX --> CH
