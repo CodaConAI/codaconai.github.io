@@ -110,7 +110,10 @@ jobs:
 
             # Root-relative links and images would resolve against dev.to;
             # point them at codacon.ai. Reference-style definitions too.
+            # Diagrams ship as SVG on the site and PNG for dev.to, whose image
+            # proxy does not reliably serve SVG (see diagrams/render.sh).
             body=$(printf '%s\n' "$body" | sed -E \
+              -e 's#(/img/diagrams/[^)]+)\.svg\)#\1.png)#g' \
               -e 's#\]\(/([^/)])#](https://codacon.ai/\1#g' \
               -e 's#^(\[[^]]+\]): /([^/])#\1: https://codacon.ai/\2#')
 
