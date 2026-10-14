@@ -3,5 +3,7 @@ flowchart TB
   VAL --> EV["Automated control checks<br/>collect evidence"]
   EV --> AR["Assessment results<br/>updated as data"]
   AR --> PO["POA&M tracks<br/>open findings"]
-  PO --> FIX["Fix ships"]
+  PO -- deviation --> EXC["Exception approved<br/>owner and deadline"]
+  PO -- remediate --> FIX["Fix ships"]
   FIX --> CH
+  EXC -- deadline reached --> PO

@@ -3,5 +3,7 @@ flowchart TB
   VAL --> EV["Vérifications automatisées<br/>recueillent les preuves"]
   EV --> AR["Résultats d’évaluation<br/>mis à jour en données"]
   AR --> PO["Le POA&M suit<br/>les constats ouverts"]
-  PO --> FIX["La correction est livrée"]
+  PO -- dérogation --> EXC["Exception approuvée<br/>responsable et échéance"]
+  PO -- corriger --> FIX["La correction est livrée"]
   FIX --> CH
+  EXC -- échéance atteinte --> PO

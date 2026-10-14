@@ -60,7 +60,15 @@ If your cloud and SaaS providers publish component definitions, you inherit thei
 
 Once controls, systems, and findings are linked as data, evidence from your pipelines and cloud configuration can feed assessment results directly. Status becomes a query, not a project. This is where OSCAL meets the rest of a modern [secure software development lifecycle](/blog/board-questions-ai-coding-tool-rollout/): compliance becomes another artifact the pipeline produces and checks.
 
-[![Continuous assurance loop: a change is validated by the pipeline, automated checks collect evidence, assessment results update, the POA&M tracks open findings, and the fix ships as the next change.](/img/diagrams/continuous-assurance.en.svg)](/img/diagrams/continuous-assurance.en.svg)
+[![Continuous assurance loop: a change is validated by the pipeline, automated checks collect evidence, assessment results update, the POA&M tracks open findings, and each finding is either fixed in the next change or granted an exception with an owner and deadline, which reopens the finding in the POA&M when the deadline arrives.](/img/diagrams/continuous-assurance.en.svg)](/img/diagrams/continuous-assurance.en.svg)
+
+### Exceptions become data, too
+
+Every program has controls it cannot meet as written: a legacy system that cannot take multi-factor authentication, a scanner finding that turns out to be a false positive, a risk the business decides to accept. In most organizations these exceptions live in email threads and a spreadsheet tab. They rarely have an expiry date, the approver has often moved on, and nobody looks at them again until an assessor asks.
+
+OSCAL records exceptions inside the risk record, not beside it. A risk in a POA&M moves through statuses such as `open`, `remediating`, `deviation-requested`, `deviation-approved`, and `closed`. Its response is typed as avoid, mitigate, transfer, share, or accept. Properties flag a risk as a false positive, accepted, or risk-adjusted, and a risk log records each status change, who logged it, and when. Because the risk references the finding, the control, and the system, an exception never drifts away from what it excuses.
+
+The payoff is the same as everywhere else in OSCAL: questions become queries. Which accepted risks reach their deadline this quarter? Which systems carry exceptions against the same control? Who approved this deviation, and on what evidence? Give every exception a deadline and the pipeline can flag it for review before it quietly becomes permanent.
 
 ### Regulatory direction of travel
 

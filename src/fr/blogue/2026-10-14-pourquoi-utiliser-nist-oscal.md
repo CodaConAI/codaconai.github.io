@@ -60,7 +60,15 @@ Si vos fournisseurs infonuagiques et SaaS publient des définitions de composant
 
 Une fois les contrôles, les systèmes et les constats reliés sous forme de données, les preuves issues de vos pipelines et de votre configuration infonuagique peuvent alimenter directement les résultats d’évaluation. L’état de conformité devient une requête, pas un projet. C’est là qu’OSCAL rejoint le reste d’un [cycle de développement logiciel sécurisé](/fr/blogue/questions-conseil-administration-outil-codage-ia/) moderne : la conformité devient un livrable de plus que le pipeline produit et vérifie.
 
-[![Boucle d’assurance continue : un changement est validé par le pipeline, des vérifications automatisées recueillent les preuves, les résultats d’évaluation sont mis à jour, le POA&M suit les constats ouverts et la correction est livrée comme prochain changement.](/img/diagrams/continuous-assurance.fr.svg)](/img/diagrams/continuous-assurance.fr.svg)
+[![Boucle d’assurance continue : un changement est validé par le pipeline, des vérifications automatisées recueillent les preuves, les résultats d’évaluation sont mis à jour, le POA&M suit les constats ouverts, et chaque constat est soit corrigé au prochain changement, soit l’objet d’une exception approuvée, avec responsable et échéance, qui rouvre le constat au POA&M à l’échéance.](/img/diagrams/continuous-assurance.fr.svg)](/img/diagrams/continuous-assurance.fr.svg)
+
+### Les exceptions deviennent des données, elles aussi
+
+Tout programme compte des contrôles qu’il ne peut pas respecter tels quels : un système patrimonial incompatible avec l’authentification multifacteur, un constat d’analyse qui se révèle un faux positif, un risque que l’entreprise choisit d’accepter. Dans la plupart des organisations, ces exceptions vivent dans des fils de courriels et un onglet de chiffrier. Elles ont rarement une date d’échéance, la personne qui les a approuvées est souvent partie, et personne ne les revoit avant qu’un évaluateur pose la question.
+
+OSCAL consigne les exceptions dans le dossier du risque lui-même, pas à côté. Un risque inscrit au POA&M passe par des statuts comme `open`, `remediating`, `deviation-requested`, `deviation-approved` et `closed`. Sa réponse est typée : éviter, atténuer, transférer, partager ou accepter. Des propriétés indiquent qu’un risque est un faux positif, accepté ou ajusté, et un journal du risque consigne chaque changement de statut, qui l’a inscrit et quand. Comme le risque fait référence au constat, au contrôle et au système, une exception ne s’éloigne jamais de ce qu’elle excuse.
+
+Le bénéfice est le même que partout ailleurs dans OSCAL : les questions deviennent des requêtes. Quels risques acceptés arrivent à échéance ce trimestre ? Quels systèmes portent des exceptions sur le même contrôle ? Qui a approuvé cette dérogation, et sur la foi de quelles preuves ? Donnez une échéance à chaque exception, et le pipeline peut la signaler pour révision avant qu’elle devienne permanente sans que personne ne l’ait décidé.
 
 ### La direction que prend la réglementation
 
