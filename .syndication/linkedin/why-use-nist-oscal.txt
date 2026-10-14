@@ -1,0 +1,7 @@
+Why Use NIST OSCAL? Compliance as Data, Not Documents
+
+What NIST OSCAL is, why machine-readable controls beat Word and spreadsheet compliance, and how to adopt it without stalling your security program.
+
+Read the full post: https://codacon.ai/blog/why-use-nist-oscal/
+
+#cloudsecurity #sdlc #codacon
