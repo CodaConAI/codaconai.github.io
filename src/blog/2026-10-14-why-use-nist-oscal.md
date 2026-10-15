@@ -2,6 +2,7 @@
 title: "Why Use NIST OSCAL? Compliance as Data, Not Documents"
 description: "What NIST OSCAL is, why machine-readable controls beat Word and spreadsheet compliance, and how to adopt it without stalling your security program."
 date: 2026-10-14
+updated: 2026-10-15
 tags:
   - cloud-security
   - sdlc
@@ -14,7 +15,7 @@ crosspost: true
 
 **Why use it.** Most compliance work still lives in Word documents and spreadsheets that are out of date the day they are signed. OSCAL turns that paperwork into data that tools can validate, compare, and update. Write a control implementation once and reuse it across frameworks. Hand assessors evidence they can process by machine. Move from an annual snapshot toward continuous assurance.
 
-**Why now.** US federal cloud authorization is moving toward machine-readable packages, with OSCAL named as an approved format. Even outside that market, the cost of maintaining compliance by hand keeps rising while the number of frameworks you answer to only grows.
+**Why now.** Regulators are publishing controls as data. US federal cloud authorization is moving toward machine-readable packages, Canada's control catalogues descend from the NIST controls OSCAL was built around, and Germany now publishes its national baseline natively in OSCAL. Meanwhile the number of frameworks you answer to only grows.
 
 ## The problem OSCAL solves
 
@@ -72,7 +73,17 @@ The payoff is the same as everywhere else in OSCAL: questions become queries. Wh
 
 ### Regulatory direction of travel
 
-FedRAMP's [RFC-0024](https://www.fedramp.gov/rfcs/0024/) proposes that Rev5 cloud providers submit authorization packages in an approved machine-readable format, with OSCAL named as one, starting with new submissions on September 30, 2026. Check FedRAMP's final rules for the scope and dates that apply to you. If you do not sell to the US government, the signal still matters: regulators and large buyers are tired of reading PDFs, and machine-readable assurance is where procurement is heading.
+Machine-readable assurance is no longer a US-only idea. Where you sit changes the details, not the direction.
+
+**United States.** FedRAMP's [RFC-0024](https://www.fedramp.gov/rfcs/0024/) proposes that Rev5 cloud providers submit authorization packages in an approved machine-readable format, with OSCAL named as one, starting with new submissions on September 30, 2026. Check FedRAMP's final rules for the scope and dates that apply to you. NIST also publishes its own catalogs, including SP 800-53 and SP 800-171, as [OSCAL content](https://github.com/usnistgov/oscal-content).
+
+**Canada.** The federal control catalogue, [ITSG-33](https://www.cyber.gc.ca/en/guidance/annex-3a-security-control-catalogue-itsg-33), is based on NIST SP 800-53, so it maps naturally onto OSCAL's catalog and profile model. The Canadian Centre for Cyber Security has not published an official OSCAL edition, but AWS has [encoded the CCCS Medium and Protected B High Value Assets cloud profiles in OSCAL](https://aws.amazon.com/blogs/security/using-oscal-to-express-canadian-cybersecurity-requirements-as-compliance-as-code/) as open samples. For defence suppliers, the [Canadian Program for Cyber Security Certification](https://www.canada.ca/en/public-services-procurement/news/2026/04/canadian-program-for-cyber-security-certification-level-1.html) (CPCSC) rests on a standard technically identical to NIST SP 800-171, which NIST already publishes in OSCAL. Level 1 self-assessments enter select defence contracts from summer 2026, and Level 2 third-party certification from spring 2027.
+
+**Quebec.** Nothing in Quebec requires OSCAL today. But Quebec organizations already carry structured obligations that live badly in documents: public bodies answer to the [government's information security directive and framework](https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/dispositions-securite-information), and Law 25 requires, among other things, privacy impact assessments for certain projects and a register of confidentiality incidents. OSCAL lets you model those obligations as your own catalog, alongside ISO 27001 or ITSG-33, and answer each from the same evidence.
+
+**Europe.** NIS2 and DORA do not prescribe a data format, and the EU has not published official OSCAL catalogs for them. Germany has moved first: the BSI now publishes its security requirements, including Grundschutz++, the successor to IT-Grundschutz, as [OSCAL documents on GitHub](https://github.com/BSI-Bund/Stand-der-Technik-Bibliothek). The catalog was published in September 2025, with NIS2 implementation as a legal driver. If one of Europe's most influential baselines now ships as data, others will follow.
+
+If none of these apply to you, the signal still matters: regulators and large buyers are tired of reading PDFs, and machine-readable assurance is where procurement is heading.
 
 ### No lock-in
 
