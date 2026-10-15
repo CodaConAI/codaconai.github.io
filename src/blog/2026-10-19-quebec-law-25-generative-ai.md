@@ -1,7 +1,7 @@
 ---
 title: "Quebec Law 25 and Generative AI: What to Settle Before Production"
 description: "Quebec Law 25 applies to every AI system that handles personal information. Seven obligations, and the CAI decisions that show how they are enforced."
-date: 2026-10-16
+date: 2026-10-19
 tags:
   - ai-security
   - board-advisory

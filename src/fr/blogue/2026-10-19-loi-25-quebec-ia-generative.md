@@ -1,7 +1,7 @@
 ---
 title: "Loi 25 et IA générative : ce qu’il faut régler avant la production"
 description: "La Loi 25 s’applique à tout système d’IA qui traite des renseignements personnels. Sept obligations, et les décisions de la CAI qui les appliquent."
-date: 2026-10-16
+date: 2026-10-19
 key: post:quebec-law-25-generative-ai
 tags:
   - ai-security
