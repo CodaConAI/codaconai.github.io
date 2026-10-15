@@ -17,9 +17,9 @@ Here is where Law 25 and generative AI meet, what each obligation asks of an AI 
 
 ## What Law 25 is
 
-Law 25 is the common name for *An Act to modernize legislative provisions as regards the protection of personal information* (S.Q. 2021, c. 25). It amended Quebec's [private sector privacy act](https://www.legisquebec.gouv.qc.ca/en/document/cs/P-39.1) and its public sector equivalent. It came into force in three phases, in September 2022, 2023, and 2024. Everything below is in force today.
+Law 25 is the common name for *An Act to modernize legislative provisions as regards the protection of personal information* (S.Q. 2021, c. 25). It amended Quebec's [private sector privacy act](https://www.legisquebec.gouv.qc.ca/en/document/cs/P-39.1) and its public sector equivalent. It was phased in mainly between September 2022 and September 2024. Everything below is in force today.
 
-The regulator is the [Commission d'accès à l'information](https://www.cai.gouv.qc.ca/) (CAI). Administrative monetary penalties reach $10 million or 2% of worldwide turnover, whichever is greater. Penal fines reach $25 million or 4%. Individuals can also sue, with punitive damages available for intentional or grossly negligent breaches.
+The regulator is the [Commission d'accès à l'information](https://www.cai.gouv.qc.ca/) (CAI). Administrative monetary penalties reach $10 million or 2% of worldwide turnover, whichever is greater (section 90.12). Penal fines reach $25 million or 4%, doubled for a subsequent offence (sections 91 and 92.1). Individuals can also sue: where an unlawful infringement is intentional or results from gross fault, the court must award punitive damages of at least $1,000 (section 93.1).
 
 Section references below are to the private sector act. We are security practitioners, not lawyers. This post explains how the obligations translate into AI architecture and controls; your counsel decides how they apply to you.
 
@@ -33,7 +33,7 @@ Section references below are to the private sector act. We are security practiti
 
 ## 2. Sending personal information outside Quebec
 
-**What the law says.** Before communicating personal information outside Quebec, an organization must assess whether it will receive adequate protection, considering its sensitivity, the purposes, the protection measures including contractual ones, and the legal framework of the destination (section 17). The transfer needs a written agreement that reflects the assessment.
+**What the law says.** Before communicating personal information outside Quebec, an organization must assess whether it will receive adequate protection, considering its sensitivity, the purposes, the protection measures including contractual ones, and the legal framework of the destination (section 17). The transfer needs a written agreement that reflects the assessment. The same applies when you entrust a provider outside Quebec with collecting, using, communicating, or keeping the information on your behalf.
 
 **What it means for AI.** Most hosted model APIs process prompts outside Quebec, often outside Canada. Every prompt carrying personal information is a communication outside Quebec. So is a cloud vector database in another region, a managed logging service, or an evaluation tool that stores conversation samples.
 
@@ -49,7 +49,7 @@ Section references below are to the private sector act. We are security practiti
 
 ## 4. Profiling and privacy by default
 
-**What the law says.** An organization that uses technology with functions to identify, locate, or profile a person must inform them beforehand and explain how to activate those functions (section 8.1). Technological products and services offered to the public must apply the highest level of confidentiality by default (section 9.1).
+**What the law says.** An organization that uses technology with functions to identify, locate, or profile a person must inform them beforehand and explain how to activate those functions (section 8.1). Technological products and services offered to the public must apply the highest level of confidentiality by default, without any action by the user (section 9.1). Browser cookies are excluded.
 
 **What it means for AI.** Personalization, sentiment analysis, and behavioural inference built into a customer-facing assistant are profiling. Conversation memory across sessions is a privacy setting. Defaults matter: the feature ships off, and the user turns it on.
 
@@ -73,7 +73,7 @@ Section references below are to the private sector act. We are security practiti
 
 ## 7. Retention and destruction
 
-**What the law says.** When the purposes are achieved, personal information must be destroyed or anonymized (section 23), and the organization's governance policies must define retention and destruction (section 3.2).
+**What the law says.** When the purposes are achieved, personal information must be destroyed or anonymized according to the anonymization regulation in force since May 2024 (section 23), and the organization's governance policies must define retention and destruction (section 3.2).
 
 **What it means for AI.** Personal information persists in more places in an AI stack than in a classic application: prompt logs, vendor abuse-monitoring stores, embeddings, caches, evaluation sets, and fine-tuned weights. You cannot destroy what you have not inventoried, and you cannot easily remove one person from a fine-tuned model.
 

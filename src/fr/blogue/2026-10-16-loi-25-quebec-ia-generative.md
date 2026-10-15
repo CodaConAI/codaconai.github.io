@@ -17,9 +17,9 @@ Voici où la Loi 25 et l’IA générative se rencontrent, ce que chaque obligat
 
 ## Ce qu’est la Loi 25
 
-La Loi 25 est le nom usuel de la *Loi modernisant des dispositions législatives en matière de protection des renseignements personnels* (L.Q. 2021, c. 25). Elle a modifié la [loi sur la protection des renseignements personnels dans le secteur privé](https://www.legisquebec.gouv.qc.ca/fr/document/lc/P-39.1) ainsi que son équivalent pour le secteur public. Elle est entrée en vigueur en trois étapes, en septembre 2022, 2023 et 2024. Tout ce qui suit s’applique aujourd’hui.
+La Loi 25 est le nom usuel de la *Loi modernisant des dispositions législatives en matière de protection des renseignements personnels* (L.Q. 2021, c. 25). Elle a modifié la [loi sur la protection des renseignements personnels dans le secteur privé](https://www.legisquebec.gouv.qc.ca/fr/document/lc/P-39.1) ainsi que son équivalent pour le secteur public. Elle est entrée en vigueur par étapes, principalement entre septembre 2022 et septembre 2024. Tout ce qui suit s’applique aujourd’hui.
 
-L’organisme de surveillance est la [Commission d’accès à l’information](https://www.cai.gouv.qc.ca/) (CAI). Les sanctions administratives pécuniaires atteignent 10 millions de dollars ou 2 % du chiffre d’affaires mondial, selon le montant le plus élevé. Les amendes pénales atteignent 25 millions de dollars ou 4 %. Les personnes concernées peuvent aussi poursuivre, et des dommages-intérêts punitifs sont possibles en cas d’atteinte intentionnelle ou de faute lourde.
+L’organisme de surveillance est la [Commission d’accès à l’information](https://www.cai.gouv.qc.ca/) (CAI). Les sanctions administratives pécuniaires atteignent 10 millions de dollars ou 2 % du chiffre d’affaires mondial, selon le montant le plus élevé (article 90.12). Les amendes pénales atteignent 25 millions de dollars ou 4 %, et doublent en cas de récidive (articles 91 et 92.1). Les personnes concernées peuvent aussi poursuivre : lorsqu’une atteinte illicite est intentionnelle ou résulte d’une faute lourde, le tribunal accorde des dommages-intérêts punitifs d’au moins 1 000 $ (article 93.1).
 
 Les articles cités ci-dessous renvoient à la loi sur le secteur privé. Nous sommes des praticiens de la sécurité, pas des avocats. Ce billet explique comment les obligations se traduisent en architecture et en contrôles d’IA ; vos conseillers juridiques décident de la façon dont elles s’appliquent à vous.
 
@@ -33,7 +33,7 @@ Les articles cités ci-dessous renvoient à la loi sur le secteur privé. Nous s
 
 ## 2. Communiquer des renseignements personnels hors du Québec
 
-**Ce que dit la loi.** Avant de communiquer des renseignements personnels à l’extérieur du Québec, une organisation doit évaluer s’ils bénéficieront d’une protection adéquate, en tenant compte de leur sensibilité, des finalités, des mesures de protection, y compris contractuelles, et du régime juridique de l’État de destination (article 17). La communication doit faire l’objet d’une entente écrite qui tient compte de cette évaluation.
+**Ce que dit la loi.** Avant de communiquer des renseignements personnels à l’extérieur du Québec, une organisation doit évaluer s’ils bénéficieront d’une protection adéquate, en tenant compte de leur sensibilité, des finalités, des mesures de protection, y compris contractuelles, et du régime juridique de l’État de destination (article 17). La communication doit faire l’objet d’une entente écrite qui tient compte de cette évaluation. Il en est de même lorsque vous confiez à un fournisseur à l’extérieur du Québec la tâche de recueillir, d’utiliser, de communiquer ou de conserver ces renseignements pour votre compte.
 
 **Ce que cela signifie pour l’IA.** La plupart des API de modèles hébergés traitent les requêtes hors du Québec, souvent hors du Canada. Chaque requête qui contient un renseignement personnel est une communication hors du Québec. Il en va de même d’une base de données vectorielle infonuagique dans une autre région, d’un service de journalisation géré ou d’un outil d’évaluation qui conserve des échantillons de conversations.
 
@@ -49,7 +49,7 @@ Les articles cités ci-dessous renvoient à la loi sur le secteur privé. Nous s
 
 ## 4. Le profilage et la confidentialité par défaut
 
-**Ce que dit la loi.** Une organisation qui recueille des renseignements au moyen d’une technologie comprenant des fonctions permettant d’identifier, de localiser ou d’effectuer un profilage doit en informer la personne au préalable et lui indiquer comment activer ces fonctions (article 8.1). Les produits et services technologiques offerts au public doivent assurer par défaut le plus haut niveau de confidentialité (article 9.1).
+**Ce que dit la loi.** Une organisation qui recueille des renseignements au moyen d’une technologie comprenant des fonctions permettant d’identifier, de localiser ou d’effectuer un profilage doit en informer la personne au préalable et lui indiquer comment activer ces fonctions (article 8.1). Les produits et services technologiques offerts au public doivent assurer par défaut le plus haut niveau de confidentialité, sans aucune intervention de la personne concernée (article 9.1). Les témoins de connexion sont exclus.
 
 **Ce que cela signifie pour l’IA.** La personnalisation, l’analyse de sentiment et l’inférence comportementale intégrées à un assistant destiné à la clientèle constituent du profilage. La mémoire de conversation d’une session à l’autre est un paramètre de confidentialité. Les valeurs par défaut comptent : la fonction est livrée désactivée, et c’est l’utilisateur qui l’active.
 
@@ -73,7 +73,7 @@ Les articles cités ci-dessous renvoient à la loi sur le secteur privé. Nous s
 
 ## 7. La conservation et la destruction
 
-**Ce que dit la loi.** Lorsque les fins sont accomplies, les renseignements personnels doivent être détruits ou anonymisés (article 23), et les politiques de gouvernance de l’organisation doivent encadrer leur conservation et leur destruction (article 3.2).
+**Ce que dit la loi.** Lorsque les fins sont accomplies, les renseignements personnels doivent être détruits ou anonymisés selon le règlement sur l’anonymisation en vigueur depuis mai 2024 (article 23), et les politiques de gouvernance de l’organisation doivent encadrer leur conservation et leur destruction (article 3.2).
 
 **Ce que cela signifie pour l’IA.** Les renseignements personnels persistent à plus d’endroits dans une pile d’IA que dans une application classique : journaux de requêtes, dépôts de surveillance des abus du fournisseur, plongements, caches, jeux d’évaluation et poids de modèles affinés. On ne peut pas détruire ce qu’on n’a pas inventorié, et on ne retire pas facilement une personne d’un modèle affiné.
 
