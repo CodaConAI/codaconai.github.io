@@ -31,4 +31,4 @@ src/
 
 ## License
 
-Code: [MIT](LICENSE). Blog content: [CC BY 4.0](LICENSE-CONTENT.md).
+Code: proprietary, all rights reserved ([LICENSE](LICENSE)). Blog content: [CC BY-NC-ND 4.0](LICENSE-CONTENT.md).

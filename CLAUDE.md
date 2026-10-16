@@ -54,7 +54,7 @@ Channel priority: codacon.ai (canonical) -> LinkedIn -> dev.to -> Medium (manual
 
 ## Content licensing
 
-All blog content under `src/blog/` is licensed CC BY 4.0. Reuse requires attribution and a link to the original post. This is noted in the post footer template.
+Blog content (EN and FR) is licensed CC BY-NC-ND 4.0 since 2026-10-16 (before that, CC BY 4.0). Sharing unchanged, non-commercially, with attribution and a link to the original is allowed; commercial reuse and adaptations need written permission. The post footer states this via `i18n.js`. Code is proprietary, all rights reserved (`LICENSE`). Do not reintroduce an open-source license.
 
 Every post ends with two CTAs:
 1. RSS feed subscription link (for RSS-to-email)
