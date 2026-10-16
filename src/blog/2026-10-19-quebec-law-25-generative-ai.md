@@ -9,15 +9,15 @@ tags:
 crosspost: true
 ---
 
-Quebec's Law 25 was not written with large language models in mind. It applies to them anyway, and the regulator has already said so in writing.
+If you run a Quebec company, you are probably its person in charge of the protection of personal information. Law 25 gives that role to the person with the highest authority by default, whether or not anyone told you (section 3.1).
 
-Every generative AI project that reads a customer email, summarizes a case file, or answers questions over an HR knowledge base is processing personal information. In Quebec, that brings a specific set of obligations and an enforcement regime with real penalties. Most of them land at design time, not after launch.
+Now read the list of failures that can draw an administrative monetary penalty (section 90.1). Two of the five that apply to most companies are not legal paperwork. They are engineering: failing to take reasonable security measures, and failing to handle decisions made by automated processing. Generative AI touches both.
 
-Here is where Law 25 and generative AI meet, what each obligation asks of an AI system, what the Commission d'accès à l'information has actually decided, and how we help Quebec organizations get it right.
+Law 25 was not written with large language models in mind. It applies to them anyway, and the regulator has already said so in writing. Here is where Law 25 and generative AI meet, what each obligation asks of an AI system, and what the Commission d'accès à l'information has actually decided.
 
 ## What Law 25 is
 
-Law 25 is the common name for *An Act to modernize legislative provisions as regards the protection of personal information* (S.Q. 2021, c. 25). It amended Quebec's [private sector privacy act](https://www.legisquebec.gouv.qc.ca/en/document/cs/P-39.1) and its public sector equivalent. It was phased in mainly between September 2022 and September 2024. Everything below is in force today.
+Law 25 is the common name for [*An Act to modernize legislative provisions as regards the protection of personal information*](https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/en/2021/2021C25A.PDF) (S.Q. 2021, c. 25). It amended Quebec's [private sector privacy act](https://www.legisquebec.gouv.qc.ca/en/document/cs/P-39.1) and its public sector equivalent. It was phased in mainly between September 2022 and September 2024. Everything below is in force today.
 
 The regulator is the [Commission d'accès à l'information](https://www.cai.gouv.qc.ca/) (CAI). Administrative monetary penalties reach $10 million or 2% of worldwide turnover, whichever is greater (section 90.12). Penal fines reach $25 million or 4%, doubled for a subsequent offence (sections 91 and 92.1). Individuals can also sue: where an unlawful infringement is intentional or results from gross fault, the court must award punitive damages of at least $1,000 (section 93.1).
 
@@ -34,6 +34,16 @@ We reviewed the CAI's published decisions, its annual and five-year reports, and
 
 The absence of fines is not a reason to wait. Orders to shut down a system after it is built are expensive, and class actions do not need a CAI decision to proceed.
 
+## Read the penalty provisions as a scope
+
+Section 90.1 lists what can draw an administrative monetary penalty for most companies: failing to inform people about collection, collecting, using, communicating, keeping, or destroying personal information unlawfully, failing to report a confidentiality incident, **failing to take the security measures required by section 10**, and **failing to inform a person of an automated decision or let them submit observations under section 12.1**. A sixth ground applies only to personal information agents.
+
+The act also tells you how penalties and fines are weighed. The CAI must first send a notice of non-compliance and let you respond (sections 90.3 and 90.4). At any time after a failure, you can offer an undertaking to remedy it; if the CAI accepts it and you comply, no penalty can be imposed for those acts (section 90.1). Its criteria include the measures you took to remedy the failure and your cooperation (section 90.2). For penal fines, a judge weighs whether the offence was foreseeable, whether you **failed to follow recommendations or warnings** to prevent it, and whether you failed to take reasonable preventive measures (section 92.3).
+
+Two consequences follow. A security assessment whose findings sit in a drawer is worse than none: it proves the risk was foreseeable. And when a notice arrives, a credible, sequenced remediation plan is what an undertaking is built on.
+
+**Not sure which of your AI systems this reaches?** [Book a 30-minute call](https://calendar.app.google/pB6QWiu87k8PqikL8). Bring one system; you leave knowing which obligations below apply to it and your top three gaps.
+
 ## 1. A privacy impact assessment before you build
 
 **What the law says.** Any project to acquire, develop, or overhaul an information system or electronic service delivery system involving personal information requires a privacy impact assessment (section 3.3). The person in charge of the protection of personal information must be consulted from the outset of the project.
@@ -46,7 +56,7 @@ The absence of fines is not a reason to wait. Orders to shut down a system after
 
 ## 2. Sending personal information outside Quebec
 
-**What the law says.** Before communicating personal information outside Quebec, an organization must conduct a privacy impact assessment covering the information's sensitivity, the purposes, the protection measures including contractual ones, and the legal framework of the destination (section 17). The information may go only if it would receive adequate protection, and the transfer needs a written agreement that reflects the assessment. The same applies when you entrust a provider outside Quebec with collecting, using, communicating, or keeping the information on your behalf.
+**What the law says.** Before communicating personal information outside Quebec, an organization must conduct a privacy impact assessment covering the information's sensitivity, the purposes, the protection measures including contractual ones, and the legal framework of the destination (section 17). The information may go only if it would receive adequate protection, and the transfer needs a written agreement that reflects the assessment. The same applies when you entrust a provider outside Quebec with collecting, using, communicating, or keeping the information on your behalf. Wherever the provider is, section 18.3 requires a written contract that specifies its protection measures and bars it from keeping the information after the contract ends. The provider must notify your person in charge without delay of any violation or *attempted* violation of confidentiality, and let them verify compliance. Few standard AI vendor terms say that.
 
 **What it means for AI.** Most hosted model APIs process prompts outside Quebec, often outside Canada. Every prompt carrying personal information is a communication outside Quebec. So is a cloud vector database in another region, a managed logging service, or an evaluation tool that stores conversation samples.
 
@@ -58,7 +68,7 @@ The absence of fines is not a reason to wait. Orders to shut down a system after
 
 **What the law says.** An organization that uses personal information to render a decision based exclusively on automated processing must inform the person no later than when it informs them of the decision (section 12.1). On request, it must disclose the personal information used, the reasons and the principal factors and parameters that led to the decision, and the right to have the information corrected. The person must be able to submit observations to a staff member in a position to review the decision.
 
-**What it means for AI.** Screening job applicants, triaging insurance claims, scoring credit, or flagging accounts for closure with a model all qualify when no human meaningfully reviews the outcome. The [CAI's guidance](https://cai.gouv.qc.ca/protection-renseignements-personnels/information-entreprises-privees/utilisation-communication-renseignements-personnels) gives credit decisions, financial aid assessments, and prioritizing a request as examples. "Principal factors and parameters" is hard to produce from an LLM after the fact. It has to be designed in: logged inputs, retrieved sources, and a decision record a reviewer can read.
+**What it means for AI.** Screening job applicants, triaging insurance claims, scoring credit, or flagging accounts for closure with a model all qualify when no human meaningfully reviews the outcome. The [CAI's guidance](https://cai.gouv.qc.ca/protection-renseignements-personnels/information-entreprises-privees/utilisation-communication-renseignements-personnels) gives credit decisions, financial aid assessments, and prioritizing a request as examples. "Principal factors and parameters" is hard to produce from an LLM after the fact. It has to be designed in: logged inputs, retrieved sources, and a decision record a reviewer can read. Section 11 adds a floor: information used to make a decision about a person must be accurate when used and kept for at least one year after the decision. A model that decides today needs a decision record that still exists next October.
 
 **On the record.** No decision interprets section 12.1 yet, but the CAI has shown what algorithmic accountability looks like to it. In its [April 2026 *Metro* decision](https://www.cai.gouv.qc.ca/uploads/pdfs/decisions-en-surveillance/1037199-S_decision-cai-metro-inc-2026-04-01.pdf) on facial recognition in grocery and pharmacy stores, it ordered the company to report every six months for two years on the systems' effectiveness, false positives, and algorithmic bias. Expect the same questions about any model that decides things about people.
 
@@ -72,6 +82,8 @@ The absence of fines is not a reason to wait. Orders to shut down a system after
 
 **On the record.** This is where the CAI has been most direct about AI. In the OpenAI investigation, it found that training models on ChatGPT conversations by default breached section 9.1, despite the information OpenAI gave users. In the [joint TikTok investigation](https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-003/) (September 2025), it found that profiling functions were not off by default, in breach of sections 8.1 and 9.1. It rejected TikTok's argument that settings designed for the European GDPR satisfied section 9.1: the Quebec rule is worded differently.
 
+Biometrics carry their own lead time. Law 25 amended the [IT framework act](https://www.legisquebec.gouv.qc.ca/en/document/cs/C-1.1) so that a biometric database, such as facial or voice templates, must be disclosed to the CAI at least 60 days before it goes into service (section 45). That disclosure is what put the *Metro* project in front of the CAI.
+
 **Warning sign.** The product team describes long-term memory or "help improve the model" as an opt-out, and nobody has asked whether it is on by default.
 
 ## 5. Secondary use and training data
@@ -80,7 +92,7 @@ The absence of fines is not a reason to wait. Orders to shut down a system after
 
 **What it means for AI.** Using support transcripts to fine-tune a model, or loading customer files into a general-purpose knowledge assistant, is a new use. That analysis belongs before the training run, not after.
 
-**On the record.** In the OpenAI investigation, the CAI accepted that training a language model can be a legitimate purpose, but found the collection overbroad. It also held that information published on the web is not "public" under the act just because it can be scraped. In *Val-des-Cerfs*, student records collected for schooling were reused to train a prediction tool without consent or notice, and the CAI ordered the school service centre to inform parents.
+**On the record.** In the OpenAI investigation, the CAI accepted that training a language model can be a legitimate purpose, but found the collection overbroad. It also held that information published on the web is not "public" under the act just because it can be scraped. In *Val-des-Cerfs*, student records collected for schooling were reused to train a prediction tool without consent or notice, and the CAI ordered the school service centre to inform parents. Inferences stay in play afterwards: a person's right of access covers all the information you hold on them (section 27). Only portability, the export in a structured format, excludes information "created or inferred" from their data.
 
 **Warning sign.** The training dataset was assembled by an engineer with production read access and a deadline.
 
@@ -110,7 +122,7 @@ Class actions do not wait for the CAI. In *Badji c. Zenleads inc.* (2026 QCCS 5)
 
 ## Accountability sits at the top
 
-Law 25 makes the person with the highest authority in the organization, usually the CEO, the person in charge of the protection of personal information by default (section 3.1). That role can be delegated in writing, but the accountability does not disappear. The title and contact information must be published on the organization's website.
+As noted at the top, the person with the highest authority, usually the CEO, holds the role of person in charge of the protection of personal information by default (section 3.1). That role can be delegated in writing, but the accountability does not disappear. The title and contact information must be published on the organization's website.
 
 That is why Law 25 is a board topic, not only a compliance one. Directors should expect to see where AI systems process personal information, which ones have a completed PIA, and what incidents were recorded. Our post on [questions a board should ask before an AI coding tool rollout](/blog/board-questions-ai-coding-tool-rollout/) applies the same discipline to a different decision.
 
@@ -118,17 +130,18 @@ That is why Law 25 is a board topic, not only a compliance one. Directors should
 
 We work alongside your privacy officer and legal counsel. They interpret the law; we make sure the system does what the PIA says it does.
 
-- **[GenAI Security Readiness Assessment](/services/genai-security-readiness/).** A four-week, fixed-scope review of your AI architecture, data flows, identity model, and providers. Findings are mapped to Law 25 alongside NIST, ISO, and OWASP references, with an owner and a remediation for each. It produces the technical evidence a section 3.3 PIA and a section 17 assessment need.
+- **[GenAI Security Readiness Assessment](/services/genai-security-readiness/).** A four-week, fixed-scope review of your AI architecture, data flows, identity model, and providers, including whether your AI vendor terms meet section 18.3. Findings are mapped to Law 25 alongside NIST, ISO, and OWASP references, with an owner and a remediation for each. It produces the technical evidence a section 3.3 PIA and a section 17 assessment need.
 - **Secure architecture and AI-driven SDLC.** Threat modeling at design time, so data residency, retention, access control on retrieval, privacy-protective defaults, and decision logging are built in rather than retrofitted. See [our services](/services/).
+- **Remediation plans.** When a finding, an incident, or a notice of non-compliance lands, we turn it into a sequenced, owned, and dated plan your counsel can put in front of the CAI.
 - **Incident response.** Playbooks and tabletop exercises for AI-specific incidents such as prompt injection, retrieval leakage, and exposed keys, with a clear path to the "risk of serious injury" assessment and CAI notification.
 - **Board advisory.** Briefings for CEOs and directors who carry Law 25 accountability, and a reporting format that shows AI privacy exposure in one page.
 
-## Before production checklist
+## Five questions to test yourself
 
-- PIA completed for the AI system, covering retrieval sources, model outputs, logs, and tool access
-- Section 17 assessment and written agreement for every provider that processes personal information outside Quebec
-- Automated decisions identified, with notices, explanations, a human review path, and bias monitoring
-- Profiling and training on user data documented, disclosed, and off by default
-- Legal basis confirmed for any secondary use, including fine-tuning
-- AI incidents in scope for the incident response plan and the incident register
-- Retention inventory across prompts, embeddings, caches, evaluation sets, and vendor stores
+1. Which of your AI systems make a decision about a person with no meaningful human review?
+2. For a decision a model made eleven months ago, can you produce the inputs it used and the sources it retrieved?
+3. Do your AI vendor contracts require the vendor to tell you about *attempted* breaches, and let you verify?
+4. Is training on user data, or memory across sessions, off by default in every AI product you offer the public?
+5. If a prompt injection exposed one customer's file to another today, would your incident plan recognize it, and could you tell the CAI what was returned?
+
+If you hesitated on two of them, that is the conversation to have before production, not after a notice. [Book a 30-minute call](https://calendar.app.google/pB6QWiu87k8PqikL8): bring one AI system, and leave with the obligations that apply to it and your top three gaps.
