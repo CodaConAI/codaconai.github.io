@@ -1,22 +1,27 @@
 name: Deploy to GitHub Pages
 
+# The site source lives in this private repository. GitHub Pages serves the
+# public repository CodaConAI/codaconai.github.io, which holds only the built
+# output. Each deploy replaces that repository's files with the new build and
+# pushes an ordinary commit. No source file is ever copied there.
+
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
 
@@ -31,19 +36,37 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Copy CNAME to output
-        run: cp CNAME _site/CNAME
+      - name: Add Pages files to output
+        run: |
+          cp CNAME _site/CNAME
+          touch _site/.nojekyll
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
+      # PAGES_DEPLOY_KEY is the private half of an SSH deploy key with write
+      # access to the public repository only. GitHub's host key is pinned.
+      - name: Publish build to the public Pages repository
+        env:
+          DEPLOY_KEY: ${{ secrets.PAGES_DEPLOY_KEY }}
+          TARGET: git@github.com:CodaConAI/codaconai.github.io.git
+        run: |
+          if [ -z "$DEPLOY_KEY" ]; then
+            echo "::error::PAGES_DEPLOY_KEY is not set"
+            exit 1
+          fi
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > ~/.ssh/known_hosts
+          export GIT_SSH_COMMAND="ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          git clone --depth 1 "$TARGET" public
+          rsync -a --delete --exclude .git _site/ public/
+          cd public
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Build unchanged; nothing to publish."
+            exit 0
+          fi
+          git commit -q -m "Deploy $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push origin HEAD:main

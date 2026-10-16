@@ -1,6 +1,8 @@
 # CODACON Website
 
-Static site for codacon.ai built with Eleventy v3. Deployed to GitHub Pages.
+Static site for codacon.ai built with Eleventy v3.
+
+This repository (`CodaConAI/site`) is **private** and holds the source. `.github/workflows/deploy.yml` builds on every push to `main` and publishes only the built `_site/` to the public repository `CodaConAI/codaconai.github.io`, which GitHub Pages serves. Never commit source, drafts, or internal notes to the public repository, and never make this one public. Internal runbooks live in the private `CodaConAI/practice` repository, not here.
 
 ## Commands
 
@@ -47,7 +49,7 @@ Optional: `updated` (ISO date), `canonical` (URL, for syndicated posts), `crossp
 
 Channel priority: codacon.ai (canonical) -> LinkedIn -> dev.to -> Medium (manual only).
 
-- **dev.to**: Automated via `.github/workflows/syndicate.yml`. Triggers after a successful Pages deploy. Posts added in the deployed commit are created on dev.to; posts modified in it update their existing article. Run the workflow manually with a `posts` input (comma-separated slugs, or `all`) to sync posts the commit diff would not catch, such as a backfill. Uses the `DEVTO_API_KEY` secret from the `syndication` GitHub environment (restricted to `main`); the job must keep `environment: syndication` or the secret is empty. Tag slugs are flattened for dev.to (`ai-security` -> `aisecurity`). Syndication state tracked in `.syndication/devto.json`.
+- **dev.to**: Automated via `.github/workflows/syndicate.yml`. Triggers after a successful Pages deploy. Posts added in the deployed commit are created on dev.to; posts modified in it update their existing article. Run the workflow manually with a `posts` input (comma-separated slugs, or `all`) to sync posts the commit diff would not catch, such as a backfill. Uses the `DEVTO_API_KEY` repository secret; the job's `if:` restricts it to `main` (environments are not available for private repositories on the Free plan). Tag slugs are flattened for dev.to (`ai-security` -> `aisecurity`). Syndication state tracked in `.syndication/devto.json`.
 - **LinkedIn**: Same workflow generates a ready-to-paste draft at `.syndication/linkedin/<slug>.txt`. Manual paste — no API automation (requires approved developer app with `w_member_social` scope).
 - **Medium**: Manual only. Use Medium's "Import Story" feature and paste the canonical URL (`https://codacon.ai/blog/<slug>/`) so SEO credit stays on the origin site. Do not use the Medium API (deprecated).
 - Set `crosspost: false` in front matter to skip syndication for a post.
