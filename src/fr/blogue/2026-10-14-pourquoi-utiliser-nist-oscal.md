@@ -2,6 +2,7 @@
 title: "Pourquoi utiliser NIST OSCAL ? La conformité en données, pas en documents"
 description: "Ce qu’est NIST OSCAL, pourquoi des contrôles lisibles par machine valent mieux que Word et Excel, et comment l’adopter sans freiner votre programme."
 date: 2026-10-14
+updated: 2026-10-15
 key: post:why-use-nist-oscal
 tags:
   - cloud-security
@@ -14,7 +15,7 @@ tags:
 
 **Pourquoi l’utiliser.** La plupart des travaux de conformité vivent encore dans des documents Word et des chiffriers qui sont périmés le jour même de leur signature. OSCAL transforme cette paperasse en données que des outils peuvent valider, comparer et mettre à jour. Décrivez la mise en œuvre d’un contrôle une seule fois et réutilisez-la d’un cadre à l’autre. Remettez aux évaluateurs des preuves qu’ils peuvent traiter par machine. Passez d’un portrait annuel à une assurance continue.
 
-**Pourquoi maintenant.** L’autorisation infonuagique fédérale américaine s’oriente vers des dossiers lisibles par machine, et OSCAL figure parmi les formats approuvés. Même hors de ce marché, le coût d’une conformité tenue à la main ne cesse d’augmenter, tandis que le nombre de cadres auxquels vous répondez ne fait que croître.
+**Pourquoi maintenant.** Les régulateurs publient désormais leurs contrôles sous forme de données. L’autorisation infonuagique fédérale américaine s’oriente vers des dossiers lisibles par machine, les catalogues de contrôles canadiens descendent des contrôles du NIST autour desquels OSCAL a été conçu, et l’Allemagne publie maintenant sa base de référence nationale directement en OSCAL. Pendant ce temps, le nombre de cadres auxquels vous répondez ne fait que croître.
 
 ## Le problème que règle OSCAL
 
@@ -72,7 +73,17 @@ Le bénéfice est le même que partout ailleurs dans OSCAL : les questions devi
 
 ### La direction que prend la réglementation
 
-La [RFC-0024](https://www.fedramp.gov/rfcs/0024/) de FedRAMP propose que les fournisseurs infonuagiques Rev5 soumettent leurs dossiers d’autorisation dans un format lisible par machine approuvé, dont OSCAL, à compter du 30 septembre 2026 pour les nouvelles soumissions. Consultez les règles finales de FedRAMP pour connaître la portée et les dates qui s’appliquent à vous. Même si vous ne vendez pas au gouvernement américain, le signal compte : régulateurs et grands acheteurs sont las de lire des PDF, et l’assurance lisible par machine est la direction que prend l’approvisionnement.
+L’assurance lisible par machine n’est plus une idée strictement américaine. Votre territoire change les détails, pas la direction.
+
+**États-Unis.** La [RFC-0024](https://www.fedramp.gov/rfcs/0024/) de FedRAMP propose que les fournisseurs infonuagiques Rev5 soumettent leurs dossiers d’autorisation dans un format lisible par machine approuvé, dont OSCAL, à compter du 30 septembre 2026 pour les nouvelles soumissions. Consultez les règles finales de FedRAMP pour connaître la portée et les dates qui s’appliquent à vous. Le NIST publie aussi ses propres catalogues, dont SP 800-53 et SP 800-171, sous forme de [contenu OSCAL](https://github.com/usnistgov/oscal-content).
+
+**Canada.** Le catalogue de contrôles fédéral, l’[ITSG-33](https://www.cyber.gc.ca/fr/orientation/annexe-3a-catalogue-des-controles-de-securite-itsg-33), est fondé sur NIST SP 800-53 et se transpose donc naturellement au modèle de catalogue et de profil d’OSCAL. Le Centre canadien pour la cybersécurité n’a pas publié d’édition OSCAL officielle, mais AWS a [encodé en OSCAL les profils infonuagiques CCCS Medium et Protected B High Value Assets (PBHVA)](https://aws.amazon.com/blogs/security/using-oscal-to-express-canadian-cybersecurity-requirements-as-compliance-as-code/) à titre d’exemples ouverts. Pour les fournisseurs de la défense, le [Programme canadien de certification en cybersécurité](https://www.canada.ca/fr/services-publics-approvisionnement/nouvelles/2026/04/programme-canadien-de-certification-en-cybersecurite--niveau-1.html) (PCCC) repose sur une norme techniquement identique à NIST SP 800-171, que le NIST publie déjà en OSCAL. L’autoévaluation de niveau 1 entre dans certains contrats de défense dès l’été 2026, et la certification par un tiers de niveau 2 dès le printemps 2027.
+
+**Québec.** Rien au Québec n’exige OSCAL aujourd’hui. Mais les organisations québécoises portent déjà des obligations structurées qui vivent mal dans des documents : les organismes publics relèvent de la [directive et du cadre gouvernementaux de sécurité de l’information](https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/dispositions-securite-information), et la loi 25 exige notamment des évaluations des facteurs relatifs à la vie privée pour certains projets et un registre des incidents de confidentialité. OSCAL permet de modéliser ces obligations dans votre propre catalogue, aux côtés d’ISO 27001 ou de l’ITSG-33, et d’y répondre à partir des mêmes preuves.
+
+**Europe.** NIS2 et DORA n’imposent aucun format de données, et l’Union européenne n’a pas publié de catalogues OSCAL officiels pour ces textes. L’Allemagne a pris les devants : le BSI publie désormais ses exigences de sécurité, dont Grundschutz++, le successeur de l’IT-Grundschutz, sous forme de [documents OSCAL sur GitHub](https://github.com/BSI-Bund/Stand-der-Technik-Bibliothek). Le catalogue a été publié en septembre 2025, la mise en œuvre de NIS2 servant de moteur juridique. Si l’une des bases de référence les plus influentes d’Europe est désormais livrée sous forme de données, d’autres suivront.
+
+Même si rien de cela ne vous vise, le signal compte : régulateurs et grands acheteurs sont las de lire des PDF, et l’assurance lisible par machine est la direction que prend l’approvisionnement.
 
 ### Aucune dépendance envers un fournisseur
 
