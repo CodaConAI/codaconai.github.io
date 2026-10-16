@@ -10,11 +10,11 @@ module.exports = {
     theme: { label: "Theme", system: "Auto", light: "Light", dark: "Dark", aria: "Change colour theme" },
     footer: {
       rights: "CODACON Inc. All rights reserved.",
-      license: 'Blog content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Code licensed under <a href="/LICENSE">MIT</a>.',
+      license: 'Blog content licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>.',
       trademark: "CODACON® is a registered trademark in Canada (TMA1357521).",
     },
     post: {
-      license: 'This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may share and adapt it with attribution and a link to',
+      license: 'This post is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>. You may share it unchanged, for non-commercial purposes, with attribution and a link to',
       original: "the original",
       cta1Title: "Stay current on AI security",
       cta1Body: 'Subscribe to the <a href="/feed.xml">RSS feed</a> for new posts on AI risk governance, secure SDLC, and incident response.',
@@ -32,11 +32,11 @@ module.exports = {
     theme: { label: "Thème", system: "Auto", light: "Clair", dark: "Sombre", aria: "Changer le thème de couleurs" },
     footer: {
       rights: "CODACON inc. Tous droits réservés.",
-      license: 'Contenu du blogue sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a>. Code sous licence <a href="/LICENSE">MIT</a>.',
+      license: 'Contenu du blogue sous licence <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr">CC BY-NC-ND 4.0</a>.',
       trademark: "CODACON® est une marque de commerce déposée au Canada (LMC1357521).",
     },
     post: {
-      license: 'Ce billet est publié sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a>. Vous pouvez le partager et l’adapter à condition d’en citer la source et d’inclure un lien vers',
+      license: 'Ce billet est publié sous licence <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr">CC BY-NC-ND 4.0</a>. Vous pouvez le partager sans modification, à des fins non commerciales, en citant la source et en incluant un lien vers',
       original: "l’original",
       cta1Title: "Restez à jour en sécurité de l’IA",
       cta1Body: 'Abonnez-vous au <a href="/feed.xml">fil RSS</a> pour nos prochains billets sur la gouvernance du risque lié à l’IA, le SDLC sécurisé et la réponse aux incidents.',
